@@ -44,3 +44,29 @@ main {
 
 /* PLAYER  */
 
+body {
+    background-color: black;
+}
+
+.text p {
+    font-size: 2vw;
+    color: white;
+}
+
+.player object {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Media query för mindre skärmar */
+@media (max-width: 500px) {
+    .text p {
+        font-size: 6vw;
+        transform: rotate(-90deg);
+        white-space: normal;
+    }
+    .player object {
+        transform: rotate(-90deg);
+        transform-origin: center;
+    }
+}

@@ -18,10 +18,7 @@
     </style>
 </head>
 <body>
-
-<!--  Ifall användarens enhetsbredd är större än : 500px -> Så skall header vara "uppe på", dvs desktopläge -->
-
-    <!-- meny -->
+    <!-- Header/Menu -->
     <nav class="navbar is-black" role="navigation" aria-label="main navigation">
         <div class="navbar-menu">
             <div class="navbar-start">
@@ -33,18 +30,19 @@
             </div>
         </div>
     </nav>
-
-            <div class="text">
-                <p>Play</p>
-                <p>Pause</p>
-                <p>Step Forward</p>
-                <p>Step Backward</p>
-                <p><br>Blind Ill - Smoke on The Water</p>
-            </div>
-            <div class="content">
-                <!-- Lägg till ditt innehåll här -->
-                <p>PLAYER!</p>
-            </div>
+    <main>
+        <div class="text">
+            <p>Play</p>
+            <p>Pause</p>
+            <p>Step Forward</p>
+            <p>Step Backward</p>
+            <p><br>Blind Ill - Smoke on The Water</p>
+        </div>
+            <p>
+                <object data="img/guitar_fretboard.svg" type="image/svg+xml">
+                    Your browser does not support SVG images.
+                </object>
+            </p>
         </div>
     </main>
 </body>
