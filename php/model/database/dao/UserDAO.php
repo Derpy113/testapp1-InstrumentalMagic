@@ -17,6 +17,23 @@ class UserDAO
         $statement->execute();
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function GetPasswordOfUser($username)
+    {
+        $sql = "select UserPassword from userprofile where Username = '$username'";
+        
+        $statement = $this->con->getPDO()->prepare($sql); 
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        if ($result == false )
+        {
+            return "";
+        }
+        else
+        {
+            return $result["UserPassword"];
+        }
+    }
 }
 
 ?>

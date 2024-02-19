@@ -9,7 +9,7 @@ class Connection
     $servername = "127.0.0.1";
     $username = "root";
     $password = "";
-    $db_name = "logindummy";
+    $db_name = "instrumental_magicdb";
     $this->con = new PDO("mysql:host=$servername;dbname=$db_name", $username, $password);
 
 
@@ -17,7 +17,6 @@ class Connection
     {
       // set the PDO error mode to exception
       $this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      echo "(Connected successfully to database)";
     }
     catch(PDOException $e)
     {
