@@ -4,11 +4,12 @@
 
 }
 .logo {
-    width: 59%; 
+    width: auto;
     max-height: 200px; 
 }
 .navbar-menu {
     justify-content: center;
+    display: flex;
 }
 
 .navbar-start {
@@ -40,3 +41,6 @@ main {
     justify-content: center; 
     background-color: black;
 }
+
+/* PLAYER  */
+
