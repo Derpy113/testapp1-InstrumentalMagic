@@ -35,10 +35,10 @@ main {
     
 }
 
-.button.is-black.is-outlined {
+/*.button.is-black.is-outlined {
   border-color: white;
   color: white;
-}
+}*/
 
 .container {
     display: flex;
