@@ -1,14 +1,25 @@
 <?php
-    //include("php/Controller/createaccount.php");
+    session_start();
     include_once ("autoload.php");
-    $cao = new CreateAccount();
+    $ca = new CreateAccount(); //Istället för att ha en controller här så ska det ligga en Action i forms som pekar på den.
     if(isset($_POST['submit']))
     {
-        $cao->TryToCreateAccount();
+        $ca->TryToCreateAccount();
+        if ($ca->GetPasswordError() == "" && $ca->GetUsernameError() == "")
+        {
+            $_SESSION['username'] = $ca->GetUsernameInput();
+            $_SESSION['password'] = $ca->GetPasswordInput();
+            //If this doesn't work, then someone forgot to change
+            //this variable on a different page.
+            header("Location: " . $_SESSION['pageBeforeLogin']);
+        }
     }
-    else
-    {
-        echo "(User input not yet received)";
+
+    if(array_key_exists('loginButton', $_POST)) { //Controller är oftast den som använder Header, ha det som allmän regel
+        header("Location: loginpage.php");        //Använd Router.
+    }
+    if(array_key_exists('goBackButton', $_POST)) {
+        header("Location: " . $_SESSION['pageBeforeLogin']);
     }
 ?>
 <!DOCTYPE html>
@@ -24,15 +35,18 @@
         <h1>Create account</h1>
         <form name="form" method="POST">
             <label>Username: </label>
-            <input type="text" id="user" name="user">
-            <label style="color: red"><?php echo $cao->GetUsernameError(); ?></label> <br>
+            <input type="text" id="user" required name="user" value=<?php echo $ca->GetUsernameInput(); ?>>
+            <label style="color: red"><?php echo $ca->GetUsernameError(); ?></label> <br>
             
             <label>Password: </label>
-            <input type="password" id="pass" name="pass">
-            <label style="color: red"><?php echo $cao->GetPasswordError(); ?></label> <br>
+            <input type="password" id="pass" required name="pass" value=<?php echo $ca->GetPasswordInput(); ?>>
+            <label style="color: red"><?php echo $ca->GetPasswordError(); ?></label> <br> <br>
             
-            <input type="submit" id="btn" value="Login" name="submit">
-            <button type="button" onclick="location.href='index.php'">Go back</button>
+            <input type="submit" id="btn" value="Create Account" name="submit">
+        </form>
+        <form name="otherForm" method="POST">
+        <input type="submit" name="loginButton" class="button" value="Log in on existing account" /> <br>
+        <input type="submit" name="goBackButton" class="button" value="Go Back" />
         </form>
     </div>
 </body>

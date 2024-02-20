@@ -25,7 +25,7 @@ class Login
     {
         $con = new Connection();
         $userDAO = new UserDAO($con);
-        $actualPassword = $userDAO->GetPasswordOfUser($username);
+        $actualPassword = $userDAO->getPasswordOfUser($username);
         if ($password == $actualPassword && $password != "")
         {   
             return "";

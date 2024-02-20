@@ -1,20 +1,25 @@
 <?php
-    //include("php/Controller/createaccount.php");
+    session_start();
     include_once ("autoload.php");
-    $cao = new Login();
-    if(isset($_GET['location']))
-    {
-        echo "HAIIIIIIII";
-        header("Location:loginpage.php?location=" . urlencode($_SERVER['REQUEST_URI']));
-    }
+    $login = new Login();
     if(isset($_POST['submit']))
     {
-        $cao->SetLoginError();
-        if ($cao->GetLoginError() == "")
+        $login->SetLoginError();
+        if ($login->GetLoginError() == "")
         {
-            header("Location:loginpage.php?location=" . urlencode($_SERVER['REQUEST_URI']));
-            //header("Location: index.php");
+            $_SESSION['username'] = $login->GetUsernameInput();
+            $_SESSION['password'] = $login->GetPasswordInput();
+            //If this doesn't work, then someone forgot to change
+            //this variable on a different page.
+            header("Location: " . $_SESSION['pageBeforeLogin']);
         }
+    }
+
+    if(array_key_exists('createAccountButton', $_POST)) {
+        header("Location: createaccountpage.php");
+    }
+    if(array_key_exists('goBackButton', $_POST)) {
+        header("Location: " . $_SESSION['pageBeforeLogin']);
     }
 ?>
 <!DOCTYPE html>
@@ -28,20 +33,21 @@
 <body>
     <div id="form">
         <h1>Log in</h1>
-        <form name="form" method="POST">
+        <form name="loginform" method="POST">
             <label>Username: </label>
-            <input type="text" id="user" name="user" required value=<?php echo $cao->GetUsernameInput(); ?>> <br>
+            <input type="text" id="user" name="user" required value=<?php echo $login->GetUsernameInput(); ?>> <br>
             
             <label>Password: </label>
-            <input type="password" id="pass" name="pass" required value=<?php echo $cao->GetPasswordInput(); ?>> <br>
+            <input type="password" id="pass" name="pass" required value=<?php echo $login->GetPasswordInput(); ?>> <br>
             
-            <label style="color: red"><?php echo $cao->GetLoginError(); ?></label> <br>
+            <label style="color: red"><?php echo $login->GetLoginError(); ?></label> <br>
 
             <input type="submit" id="btn" value="Login" name="submit">
-            <button type="button" onclick="location.href='index.php'">Go back</button>
         </form>
-        <label>Emotional support eevee believes in you </label>
-        <div class="tenor-gif-embed" data-postid="20928577" data-share-method="host" data-aspect-ratio="0.846875" data-width="20%"><a href="https://tenor.com/view/eevee-rasputin-gif-20928577">Eevee Rasputin GIF</a>from <a href="https://tenor.com/search/eevee-gifs">Eevee GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        <form name="otherForm" method="POST">
+        <input type="submit" name="createAccountButton" class="button" value="Create new account" /> <br>
+        <input type="submit" name="goBackButton" class="button" value="Go Back" />
+        </form>
     </div>
 </body>
 </html>
