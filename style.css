@@ -90,8 +90,8 @@ object {
     .control-buttons {
         position: absolute;
         transform-origin: 200px 200px;
-        left: 0px;
-        top: 50px
+        left: 130px;
+        top: 136px;
     }
 }
 
