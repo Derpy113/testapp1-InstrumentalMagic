@@ -45,7 +45,14 @@ main {
     min-height: 100vh;
     background-color: #000;
     color: #fff;
+    
 }
+
+.button.is-black.is-outlined {
+  border-color: white;
+  color: white;
+}
+
 
 /* Spelarobjekt */
 object {
@@ -55,13 +62,6 @@ object {
     justify-content: center;
 }
 
-
-.content-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 
 .content-container svg {
     width: 100px; /* Eller en annan storlek som passar */

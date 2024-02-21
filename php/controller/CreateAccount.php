@@ -1,6 +1,6 @@
 <?php
 
-//include("connection.php");
+ include_once("autoload.php");
 
 class CreateAccount
 {
@@ -28,8 +28,9 @@ class CreateAccount
 
     private function validateUsername($username) //maybe make this public?
     {
-        $co = new connectionObject();
-        $count = $co->GetUserCOUNTByName($username);
+        $con = new Connection();
+        $userDAO = new UserDAO($con);
+        $count = $userDAO->countByName($username);
         if ($count['total'] > 0)
         {
             return "* Username is already in use";
