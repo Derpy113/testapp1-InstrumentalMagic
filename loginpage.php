@@ -1,7 +1,7 @@
 <?php
     session_start();
     include_once ("autoload.php");
-    $login = new Login();
+    $login = new Login(); //Istället för att ha ett controller objekt här så ska det ligga en Action i forms som pekar på den.
     if(isset($_POST['submit']))
     {
         $login->SetLoginError();
@@ -15,8 +15,8 @@
         }
     }
 
-    if(array_key_exists('createAccountButton', $_POST)) {
-        header("Location: createaccountpage.php");
+    if(array_key_exists('createAccountButton', $_POST)) { //JOSEF TODO Controller är oftast den som använder Header, ha det som allmän regel
+        header("Location: createaccountpage.php");        //Lägg dessa två i Controller (I router?)
     }
     if(array_key_exists('goBackButton', $_POST)) {
         header("Location: " . $_SESSION['pageBeforeLogin']);

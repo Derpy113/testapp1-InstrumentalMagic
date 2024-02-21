@@ -2,7 +2,7 @@
 
 class userprofile
 {
-    public ?string $UserProfile_ID; //temp public
+    public ?string $UserProfile_ID; //Temporary!
     public ?string $Username;
     public ?string $UserPassword;
     public ?string $ProfilePic;
