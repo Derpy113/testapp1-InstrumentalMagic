@@ -33,7 +33,14 @@ main {
     min-height: 100vh;
     background-color: #000;
     color: #fff;
+    
 }
+
+.button.is-black.is-outlined {
+  border-color: white;
+  color: white;
+}
+
 .container {
     display: flex;
     flex-direction: column;
