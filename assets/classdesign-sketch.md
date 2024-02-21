@@ -32,22 +32,29 @@ class Login
 PROFILE
 SETTINGS
 
-View ----
+# View ----
 LIBRARY ??
 
-Controller ----
-getSong
+# Controller ----
 Song
+Library.getSong
+//// most popular
+//// least popular
+//// latest played
+//// oldest played
+  Library.searchSong
 PLAYER
 - stepForward
 - stepBackward
 // getRating
-- setRating
+// setRating
 - addToTimesPlayed / Tally
+// setLoopStart
+// setLoopEnd
 --
 (SEARCHLIBRARY)
 
-Model ----
+# Model ----
 LibraryDAO / SongDAO ??
 (UserDAO)
 
