@@ -89,12 +89,13 @@ object {
 }
 
 @media (max-width: 500px) {
-    object, .control-buttons {
+    .content-container {
         transform: rotate(-90deg);
         transform-origin: center;
+        padding-top: 9rem;
     }
 
-    .control-buttons button {
+ /*   .control-buttons button {
         transform: rotate(-90deg);
-    }
+    } */
 }

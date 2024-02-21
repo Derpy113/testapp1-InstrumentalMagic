@@ -33,12 +33,12 @@
     <main>
 
     <div class="content-container">
+    <div class="songname">LÅTNAMN</div>
         <div class="control-buttons">
-            <button class="button">PLAY</button>
-            <button class="button">PAUSE</button>
-            <button class="button">NEXT</button>
+            <button class="button">STEP FORWARD</button>
+            <button class="button">STEP BACKWARD</button>
+            <button class="button">TO START</button>
         </div>
-        <div class="songname">LÅTNAMN</div>
 
         <figure class="image">
                     <object data="img/guitar_fretboard.svg" type="image/svg+xml"></object>
