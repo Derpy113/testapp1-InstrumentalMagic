@@ -31,8 +31,9 @@
         </div>
     </nav>
     <main>
+
     <div class="content-container">
-    <div class="control-buttons">
+        <div class="control-buttons">
             <button class="button is-primary">PLAY</button>
             <button class="button is-link">PAUSE</button>
             <button class="button is-info">NEXT</button>
