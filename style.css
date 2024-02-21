@@ -10,6 +10,14 @@ body {
     width: auto;
     max-height: 200px;
 }
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    background-color: black;
+}
+
 
 /* Meny */
 .navbar-menu {
@@ -52,47 +60,41 @@ main {
   border-color: white;
   color: white;
 }*/
-
-
-/* Spelarobjekt */
-object {
+.control-buttons{
     display: flex;
-    transition: transform 0.3s ease;
-    margin-top: 200px;
     justify-content: center;
+    align-items: center;
+    margin-top: 8rem;
 }
 
-
-.content-container svg {
-    width: 100px; /* Eller en annan storlek som passar */
-    height: auto;
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Lägg till detta om dina flex-items inte centreras som förväntat */
+    width: 100%;
 }
 
-/* Media query för att rotera innehållet för små skärmar */
+object {
+    margin: auto; /* Centrerar elementet horisontellt */
+    display: block; /* För att säkerställa att margin:auto tillämpas korrekt */
+    max-width: 100%; /* Se till att det inte sträcker sig utanför skärmens bredd */
+}
+
+.control-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem; /* Justera detta värde efter behov */
+}
+
 @media (max-width: 500px) {
-    .content-container, .content-container svg {
+    object, .control-buttons {
         transform: rotate(-90deg);
         transform-origin: center;
     }
-    
-}
-@media (max-width: 500px) {
-    .content-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
 
-
-    .control-buttons, .svg-player {
-        transform-origin: top left;
-    }
-
-    .control-buttons {
-        position: absolute;
-        transform-origin: 200px 200px;
-        left: 8.1rem;
-        top: 8.5rem;
+    .control-buttons button {
+        transform: rotate(-90deg);
     }
 }
-

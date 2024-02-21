@@ -22,10 +22,10 @@
     <nav class="navbar is-black" role="navigation" aria-label="main navigation">
         <div class="navbar-menu">
             <div class="navbar-start">
-            <a class="navbar-item" href="#">
+            <a class="navbar-item" href="index.php">
             <img src="img/homebutton.png" alt="Home"></a>
                 <a class="navbar-item" href="#">Player</a>
-                <a class="navbar-item" href="#">Library</a>
+                <a class="navbar-item" href="library.php">Library</a>
                 <a class="navbar-item" href="#">Profile</a>
             </div>
         </div>
@@ -34,13 +34,14 @@
 
     <div class="content-container">
         <div class="control-buttons">
-            <button class="button is-primary">PLAY</button>
-            <button class="button is-link">PAUSE</button>
-            <button class="button is-info">NEXT</button>
+            <button class="button">PLAY</button>
+            <button class="button">PAUSE</button>
+            <button class="button">NEXT</button>
         </div>
+        <div class="songname">LÅTNAMN</div>
 
         <figure class="image">
-                    <object data="img/guitar_fretboard.svg" type="image/svg+xml">
+                    <object data="img/guitar_fretboard.svg" type="image/svg+xml"></object>
                     </figure>
                     <svg>Your SVG code here</svg>
     </div>
