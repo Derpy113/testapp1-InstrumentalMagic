@@ -4,27 +4,34 @@
 
 class CreateAccount
 {
+    private $usernameInput = "";
+    private $passwordInput = "";
+
     private $usernameError = "";
     private $passwordError = "";
 
-    function __construct()
-    {
-        // echo "a";
-    }
-
-
     public function TryToCreateAccount()
     {
-        if(isset($_POST['submit'])) //maybe remove this if statement, it's redundant
+        if(isset($_POST['submit'])) //maybe remove this if statement, it will currently always be true
         {
-            $username = $_POST['user'];
-            $password = $_POST['pass'];
-
-            $this->usernameError = $this->validateUsername($username);
-            $this->passwordError = $this->validatePassword($password);
+            $this->validateInput();
+            if ($this->usernameError == "" && $this->passwordError == "")
+            {
+                $con = new Connection();
+                $userDAO = new UserDAO($con);
+                $userDAO->createUser($this->usernameInput, $this->passwordInput);
+            }
         }
     }
 
+    private function validateInput()
+    {
+        $this->usernameInput = $_POST['user'];
+        $this->passwordInput = $_POST['pass'];
+
+        $this->usernameError = $this->validateUsername($this->usernameInput);
+        $this->passwordError = $this->validatePassword($this->passwordInput);
+    }
 
     private function validateUsername($username) //maybe make this public?
     {
@@ -65,6 +72,16 @@ class CreateAccount
         }
     }
 
+    public function GetUsernameInput()
+    {
+        return $this->usernameInput;
+    }
+
+    public function GetPasswordInput()
+    {
+        return $this->passwordInput;
+    }
+
     public function GetUsernameError()
     {
         return $this->usernameError;
@@ -73,11 +90,6 @@ class CreateAccount
     public function GetPasswordError()
     {
         return $this->passwordError;
-    }
-
-    public function DummyFunction()
-    {
-        echo "Y";
     }
 }
 
