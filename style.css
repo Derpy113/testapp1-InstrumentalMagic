@@ -1,42 +1,97 @@
-.body
-{
-    background-color: black;
+/* Stilmall för startsidan */
 
+/* Bakgrundsfärg */
+body {
+    background-color: black;
 }
+
+/* Logotyp */
 .logo {
-    width: 59%; 
-    max-height: 200px; 
+    width: auto;
+    max-height: 200px;
 }
+
+/* Meny */
 .navbar-menu {
     justify-content: center;
+    display: flex;
+    background-color: black;
 }
 
 .navbar-start {
     display: flex;
     justify-content: center;
     width: 100%;
-}
-.hero is-black {
-    background-color: black;
+    background-color: black
 }
 
+/* Sidhuvud */
+.hero.is-black {
+    background-color: black;
+    display: flex;
+}
+
+/* Menyknappar */
 .navbar-item {
     font-size: 1.5rem;
-    width: 200px;
+    width: auto;
     border: 1px solid #333;
     justify-content: center;
     background-color: #a199c4;
-    
 }
+
+/* Huvudinnehåll */
 main {
     min-height: 100vh;
     background-color: #000;
     color: #fff;
+    
 }
-.container {
+
+/*.button.is-black.is-outlined {
+  border-color: white;
+  color: white;
+}*/
+
+
+/* Spelarobjekt */
+object {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; 
-    background-color: black;
+    transition: transform 0.3s ease;
+    margin-top: 200px;
+    justify-content: center;
 }
+
+
+.content-container svg {
+    width: 100px; /* Eller en annan storlek som passar */
+    height: auto;
+}
+
+/* Media query för att rotera innehållet för små skärmar */
+@media (max-width: 500px) {
+    .content-container, .content-container svg {
+        transform: rotate(-90deg);
+        transform-origin: center;
+    }
+    
+}
+@media (max-width: 500px) {
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .control-buttons, .svg-player {
+        transform-origin: top left;
+    }
+
+    .control-buttons {
+        position: absolute;
+        transform-origin: 200px 200px;
+        left: 8.1rem;
+        top: 8.5rem;
+    }
+}
+

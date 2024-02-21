@@ -1,4 +1,4 @@
-    <?php
+<?php
         //include("login.php")
     ?>
     <!DOCTYPE html>
@@ -27,9 +27,9 @@
         <nav class="navbar is-black" role="navigation" aria-label="main navigation">
             <div class="navbar-menu">
                 <div class="navbar-start">
-                    <a class="navbar-item" href="index.php">Home</a>
+                    <a class="navbar-item" href="#">Home</a>
                     <a class="navbar-item" href="#">Player</a>
-                    <a class="navbar-item" href="library.php">Library</a>
+                    <a class="navbar-item" href="#">Library</a>
                     <a class="navbar-item" href="#">Profile</a>
                 </div>
             </div>
