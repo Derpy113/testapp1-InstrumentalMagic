@@ -25,7 +25,12 @@ class Login
     {
         $con = new Connection();
         $userDAO = new UserDAO($con);
-        $actualPassword = $userDAO->getPasswordOfUser($username);
+        $user = $userDAO->getUserByUsername($username);
+        if (is_null($user))
+        {
+            return "* Password is incorrect";
+        }
+        $actualPassword = $user->UserPassword;
         if ($password == $actualPassword && $password != "")
         {   
             return "";
@@ -34,15 +39,6 @@ class Login
         {
             return "* Password is incorrect";
         }
-        
-        //if ($password == $actualPassword["UserPassword"])
-        //{   
-        //    return "";
-        //}
-        //else
-        //{
-        //    return "* Password is incorrect";
-        //}
     }
 
     public function GetUsernameInput()

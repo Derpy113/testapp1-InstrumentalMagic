@@ -1,7 +1,7 @@
 <?php
     session_start();
     include_once ("autoload.php");
-    $ca = new CreateAccount(); //Istället för att ha en controller här så ska det ligga en Action i forms som pekar på den.
+    $ca = new CreateAccount(); //Istället för att ha ett controller objekt här så ska det ligga en Action i forms som pekar på den.
     if(isset($_POST['submit']))
     {
         $ca->TryToCreateAccount();
@@ -15,8 +15,8 @@
         }
     }
 
-    if(array_key_exists('loginButton', $_POST)) { //Controller är oftast den som använder Header, ha det som allmän regel
-        header("Location: loginpage.php");        //Använd Router.
+    if(array_key_exists('loginButton', $_POST)) { //JOSEF TODO Controller är oftast den som använder Header, ha det som allmän regel
+        header("Location: loginpage.php");        //Lägg dessa två i Controller (I router?)
     }
     if(array_key_exists('goBackButton', $_POST)) {
         header("Location: " . $_SESSION['pageBeforeLogin']);
