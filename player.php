@@ -12,7 +12,10 @@
     <style>
 
         body {
-            background-color: black;
+            background-color: black !important;
+        }
+        html {
+            background-color: black !important;
         }
 
     </style>
