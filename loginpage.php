@@ -1,26 +1,6 @@
 <?php
     session_start();
     include_once ("autoload.php");
-    $login = new Login(); //Istället för att ha ett controller objekt här så ska det ligga en Action i forms som pekar på den.
-    if(isset($_POST['submit']))
-    {
-        $login->SetLoginError();
-        if ($login->GetLoginError() == "")
-        {
-            $_SESSION['username'] = $login->GetUsernameInput();
-            $_SESSION['password'] = $login->GetPasswordInput();
-            //If this doesn't work, then someone forgot to change
-            //this variable on a different page.
-            header("Location: " . $_SESSION['pageBeforeLogin']);
-        }
-    }
-
-    if(array_key_exists('createAccountButton', $_POST)) { //JOSEF TODO Controller är oftast den som använder Header, ha det som allmän regel
-        header("Location: createaccountpage.php");        //Lägg dessa två i Controller (I router?)
-    }
-    if(array_key_exists('goBackButton', $_POST)) {
-        header("Location: " . $_SESSION['pageBeforeLogin']);
-    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,9 +13,9 @@
 <body>
     <div id="form">
         <h1>Log in</h1>
-        <form name="loginform" method="POST">
+        <form name="loginform" method="POST" action="php/controller/login.php">
             <label>Username: </label>
-            <input type="text" id="user" name="user" required value=<?php echo $login->GetUsernameInput(); ?>> <br>
+            <input type="text" id="user" name="user" required value=<?php echo $login->GetUsernameInput(); ?>> <br> <!-- get $_SESSION variables here instead now that login no longer exists -->
             
             <label>Password: </label>
             <input type="password" id="pass" name="pass" required value=<?php echo $login->GetPasswordInput(); ?>> <br>
