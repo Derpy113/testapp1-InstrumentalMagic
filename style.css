@@ -19,14 +19,6 @@ body {
 }
 
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; 
-    background-color: black;
-}
-
 /* Meny */
 .navbar-menu {
     justify-content: center;
