@@ -45,8 +45,11 @@ Library.getSong
 ////   oldest played
   Library.searchSong
 PLAYER
+  loadedSong = ["c'\2", "c'\2", "g'\1", "g'\1"]
+  playHead/songPosition
 - stepForward
 - stepBackward
+- toStart
 // getRating
 // setRating
 - addToTimesPlayed / Tally
