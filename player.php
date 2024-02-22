@@ -40,6 +40,7 @@
             <button class="button">TO START</button>
         </div>
 
+
         <figure class="image">
                     <object data="img/guitar_fretboard.svg" type="image/svg+xml"></object>
                     </figure>
