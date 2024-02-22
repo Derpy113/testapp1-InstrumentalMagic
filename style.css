@@ -56,10 +56,7 @@ main {
     
 }
 
-/*.button.is-black.is-outlined {
-  border-color: white;
-  color: white;
-}*/
+
 .control-buttons{
     display: flex;
     justify-content: center;
@@ -72,20 +69,20 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center; /* Lägg till detta om dina flex-items inte centreras som förväntat */
+    text-align: center; 
     max-width: 100%;
 }
 
 object {
     margin: auto; /* Centrerar elementet horisontellt */
-    display: block; /* För att säkerställa att margin:auto tillämpas korrekt */
-    max-width: 100%; /* Se till att det inte sträcker sig utanför skärmens bredd */
+    display: block; 
+    max-width: 100%; 
 }
 
 .control-buttons {
     display: flex;
     justify-content: center;
-    margin-top: 2rem; /* Justera detta värde efter behov */
+    margin-top: 2rem;
 }
 
 @media (max-width: 500px) {
@@ -94,9 +91,6 @@ object {
         transform-origin: center;
         padding-top: 9rem;
         background-color: black;
-    }
-    object {
-        width: 350rem;
     }
 
  /*   .control-buttons button {
