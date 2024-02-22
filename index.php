@@ -28,7 +28,7 @@
             <div class="navbar-menu">
                 <div class="navbar-start">
                     <a class="navbar-item" href="index.php">Home</a>
-                    <a class="navbar-item" href="#">Player</a>
+                    <a class="navbar-item" href="player.php">Player</a>
                     <a class="navbar-item" href="library.php">Library</a>
                     <a class="navbar-item" href="#">Profile</a>
                 </div>

@@ -2,7 +2,7 @@
 
 /* Bakgrundsfärg */
 body {
-    background-color: black;
+    background-color: black !important;
 }
 
 /* Logotyp */
@@ -15,7 +15,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center; 
-    background-color: black;
+    background-color: black !important;
 }
 
 
@@ -23,19 +23,19 @@ body {
 .navbar-menu {
     justify-content: center;
     display: flex;
-    background-color: black;
+    background-color: black !important;
 }
 
 .navbar-start {
     display: flex;
     justify-content: center;
     width: 100%;
-    background-color: black
+    background-color: black !important;
 }
 
 /* Sidhuvud */
 .hero.is-black {
-    background-color: black;
+    background-color: black !important;
     display: flex;
 }
 
@@ -51,18 +51,18 @@ body {
 /* Huvudinnehåll */
 main {
     min-height: 100vh;
-    background-color: #000;
+    background-color: black !important;
     color: #fff;
     
 }
 
 
-.control-buttons{
+/* .control-buttons{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 8rem;
-}
+} */
 
 .content-container {
     display: flex;
@@ -76,13 +76,17 @@ main {
 object {
     margin: auto; /* Centrerar elementet horisontellt */
     display: block; 
-    max-width: 100%; 
+    /* max-width: 100%; */
 }
 
 .control-buttons {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
+}
+
+.songname {
+    margin-top: 3rem;
 }
 
 @media (max-width: 500px) {
