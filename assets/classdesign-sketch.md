@@ -38,10 +38,11 @@ LIBRARY ??
 # Controller ----
 Song
 Library.getSong
-//// most popular
-//// least popular
+//// most popular = most played
+//   highest rated songs
+////   least popular
 //// latest played
-//// oldest played
+////   oldest played
   Library.searchSong
 PLAYER
 - stepForward
