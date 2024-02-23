@@ -2,7 +2,6 @@
 
 class Song
 {
-
   private ?string $artist;
   private ?string $genre;
   private ?int $rating;
