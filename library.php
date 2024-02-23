@@ -1,6 +1,9 @@
-<!-- ?php
-  $fruits = ["apple","Banana", "Orange", "Mango"]
-? -->
+<?php
+  include_once("autoload.php");
+  //require_once 'Connection.php'; // Antag att denna fil definierar din Connection-klass
+//require_once 'SongDAO.php'; // Antag att denna fil definierar din SongDAO-klass
+//require_once 'Song.php'; // Antag att denna fil definierar din Song-klass
+?>
 
 
 <!DOCTYPE html>
@@ -37,8 +40,22 @@
   <!-- Innehåll på sidan -->
   <main>
     
-  
-  
+
+  <?php $con = new Connection();
+$songdao = new SongDAO($con); // Notera att $con nu korrekt passas till konstruktören
+
+$songs = $songdao->findAll();
+foreach ($songs as $song) {
+    // Anta att $song->title är en publik egenskap i din Song-klass
+    echo "<div><button><p>Artist: " . htmlspecialchars($song->Artist) . ($song->Rating) . "</p></button></div>";
+    echo "<div><p>Genre: " . htmlspecialchars($song->Genre) . "</p></div>";
+}
+?>
+
+<?php foreach ($numbers as $number): ?>
+   <div class="container"><button><?= htmlspecialchars($number) ?></button></div>
+<?php endforeach; ?>
+
     <!-- <div class="container">
       ?php foreach ($fruits as $fruit): ?>
         <button>?php echo $fruit; ?></button>
