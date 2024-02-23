@@ -45,13 +45,21 @@ Library.getSong
 ////   oldest played
   Library.searchSong
 PLAYER
-  loadedSong = ["c'\2", "c'\2", "g'\1", "g'\1"]
+  Player.loadSongData
+               playHead
+                  |
+                  v
+  loadedSong = [["c'\2", "c'\2"], "c'\2", "g'\1", "g'\1"]
+     // två noter i samma event, eller sätt som subarray
+     // +Ska man redan här lägga över i en Javascript-array
   playHead/songPosition
+     // kolla att inte går utanför arrayen
 - stepForward
 - stepBackward
 - toStart
-// getRating
+// getRating   ??
 // setRating
+//   timesRated
 - addToTimesPlayed / Tally
 // setLoopStart
 // setLoopEnd
