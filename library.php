@@ -1,3 +1,8 @@
+<!-- ?php
+  $fruits = ["apple","Banana", "Orange", "Mango"]
+? -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,14 +36,15 @@
 
   <!-- Innehåll på sidan -->
   <main>
-    <div class="container">
-      <p>Nu är du i Library, bara välja och vraka!</p>
-      <!-- <button class="button is-black is-outlined has-text-white">Blinka lilla stjärna!</button> -->
-      <button>Blinka lilla stjärna!</button>
-      <button>I bergakungens sal!</button>
-      <button>Smoke on the water!</button>
-      <button>Breaking the law!</button>
-    </div>
+    
+  
+  
+    <!-- <div class="container">
+      ?php foreach ($fruits as $fruit): ?>
+        <button>?php echo $fruit; ?></button>
+      ?php endforeach; ?>
+    </div> -->
+
   </main>
 </body>
 </html>
