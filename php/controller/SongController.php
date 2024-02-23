@@ -6,10 +6,6 @@
   {
     private $songs;
 
-    // public function setSongs(){
-    //   $this->songs 
-    // }
-
     public function getSongs(){
       return $this->songs;
     }
@@ -22,7 +18,11 @@
       $this->songs = $songs;
     }
 
-    
+    public function __construct()
+    {
+      $this->displaySongs();
+    }
+
 
   }
 

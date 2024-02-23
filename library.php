@@ -42,7 +42,7 @@
     <?php $songs = $songsController->getSongs(); ?>
     <?php foreach ($songs as $song): ?>
         <div class="container">
-          <p>Title: <?= htmlspecialchars($song->getTitle) ?></p>
+          <p>Title: <?= htmlspecialchars($song->getTitle()) ?></p>
         </div>
     <?php endforeach; ?>
 
