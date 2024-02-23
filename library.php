@@ -1,6 +1,7 @@
-<!-- ?php
-  $fruits = ["apple","Banana", "Orange", "Mango"]
-? -->
+<?php
+  include_once("autoload.php");
+  // $fruits = ["apple","Banana", "Orange", "Mango"]
+?>
 
 
 <!DOCTYPE html>
@@ -37,8 +38,16 @@
   <!-- Innehåll på sidan -->
   <main>
     
-  
-  
+    <?php $songsController = new SongController(); ?>
+    <?php $songs = $songsController->getSongs(); ?>
+    <?php foreach ($songs as $song): ?>
+        <div class="container">
+          <p>Title: <?= htmlspecialchars($song->getTitle) ?></p>
+        </div>
+    <?php endforeach; ?>
+
+
+
     <!-- <div class="container">
       ?php foreach ($fruits as $fruit): ?>
         <button>?php echo $fruit; ?></button>
