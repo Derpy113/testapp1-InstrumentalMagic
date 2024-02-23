@@ -5,10 +5,10 @@ class Song
   private ?string $artist;
   private ?string $genre;
   private ?int $rating;
-  private ?string $song;
+  private ?string $note;
   private int $song_id;
   private ?int $timesPlayed;
-  private ?string $title;
+  // private ?string $title;
 
     public function getArtist(): string
     {
@@ -45,15 +45,15 @@ class Song
         }
     }
 
-    public function getSong(): string
+    public function getNote(): string
     {
-        return $this->song;
+        return $this->note;
     }
 
-    public function setSong(string $song): void
+    public function setNote(string $note): void
     {
         // Validation can be added here to ensure non-empty and appropriate length
-        $this->song = trim($song);
+        $this->note = trim($note);
     }
 
     public function getSongId(): int
@@ -75,7 +75,7 @@ class Song
 
     // No setter for timesPlayed as it's primarily incremented
 
-    public function getTitle(): string
+/*     public function getTitle(): string
     {
         return $this->title;
     }
@@ -84,7 +84,7 @@ class Song
     {
         // Validation can be added here to ensure non-empty and appropriate length
         $this->title = trim($title);
-    }
+    } */
 }
 
 
