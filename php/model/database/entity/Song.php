@@ -3,13 +3,26 @@
 
 class Song
 {
-  private ?string $artist;
-  private ?string $genre;
-  private ?int $rating;
-  private ?string $song;
-  private int $song_id;
-  private ?int $timesPlayed;
-  private ?string $title;
+  private ?string $artist = "Johan";
+  private ?string $genre = "Rock";
+  private ?int $rating = 1;
+  private ?string $song = "abc";
+  private int $song_id = 1;
+  private ?int $timesPlayed = 3;
+  private ?string $title = "Dum Movie!";
+
+
+    public function __construct(?string $artist, ?string $genre, ?int $rating, 
+    ?string $song, int $song_id, ?int $timesPlayed, ?string $title)
+    {
+        $this->artist = $artist;
+        $this->genre = $genre;
+        $this->rating = $rating;
+        $this->song = $song;
+        $this->song_id = $song_id;
+        $this->timesPlayed = $timesPlayed;
+        $this->title = $title;
+    }
 
     public function getArtist(): string
     {
@@ -86,6 +99,8 @@ class Song
         // Validation can be added here to ensure non-empty and appropriate length
         $this->title = trim($title);
     }
+
+
 }
 
 
