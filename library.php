@@ -1,6 +1,5 @@
 <?php
   include_once("autoload.php");
-  // $fruits = ["apple","Banana", "Orange", "Mango"]
 ?>
 
 
@@ -45,14 +44,6 @@
           <p>Title: <?= htmlspecialchars($song->getTitle()) ?></p>
         </div>
     <?php endforeach; ?>
-
-
-
-    <!-- <div class="container">
-      ?php foreach ($fruits as $fruit): ?>
-        <button>?php echo $fruit; ?></button>
-      ?php endforeach; ?>
-    </div> -->
 
   </main>
 </body>

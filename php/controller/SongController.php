@@ -6,11 +6,12 @@
   {
     private $songs;
 
-    public function getSongs(){
+    public function getSongs() //
+    {
       return $this->songs;
     }
       
-    public function displaySongs()
+    public function loadSongs() //ändra namnet, fundera om den behövs
     {
       $con = new Connection();
       $songDAO = new SongDAO($con);
@@ -18,11 +19,10 @@
       $this->songs = $songs;
     }
 
-    public function __construct()
+    public function __construct() //
     {
-      $this->displaySongs();
+      $this->loadSongs();
     }
-
 
   }
 
