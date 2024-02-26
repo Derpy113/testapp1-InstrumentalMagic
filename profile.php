@@ -27,10 +27,10 @@
         <nav class="navbar is-black" role="navigation" aria-label="main navigation">
             <div class="navbar-menu">
                 <div class="navbar-start">
-                    <a class="navbar-item" href="#">Home</a>
-                    <a class="navbar-item" href="#">Player</a>
-                    <a class="navbar-item" href="#">Library</a>
-                    <a class="navbar-item" href="#">Profile</a>
+                    <a class="navbar-item" href="index.php">Home</a>
+                    <a class="navbar-item" href="player.php">Player</a>
+                    <a class="navbar-item" href="library.php">Library</a>
+                    <a class="navbar-item" href="profile.php">Profile</a>
                 </div>
             </div>
         </nav>
@@ -38,6 +38,7 @@
         <!-- Innehåll på sidan -->
         <main>
             <div class="container">
+                <p>Detta är din Profile hihi...</p>
                 <p>text på hemsida, gitarr e bra!</p>
             </div>
         </main>

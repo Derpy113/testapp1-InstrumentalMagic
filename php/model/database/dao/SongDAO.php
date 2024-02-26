@@ -16,6 +16,7 @@ Class SongDAO
     $sqlQuery = 'SELECT * FROM Songs';
     $stmt = $this->con->getPDO()->prepare($sqlQuery);
     $stmt->execute();
+    
     return $stmt->fetchAll(PDO::FETCH_CLASS, Song::class);
     
   }
