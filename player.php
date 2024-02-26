@@ -27,9 +27,9 @@
             <div class="navbar-start">
             <a class="navbar-item" href="index.php">
             <img src="img/homebutton.png" alt="Home"></a>
-                <a class="navbar-item" href="#">Player</a>
+                <a class="navbar-item" href="player.php">Player</a>
                 <a class="navbar-item" href="library.php">Library</a>
-                <a class="navbar-item" href="#">Profile</a>
+                <a class="navbar-item" href="profile.php">Profile</a>
             </div>
         </div>
     </nav>
