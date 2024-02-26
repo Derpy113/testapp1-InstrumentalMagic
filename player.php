@@ -1,6 +1,17 @@
 <?php
-    //include("login.php")
+  include_once("autoload.php");
+
+  $playerController = new PlayerController();
+  $songDAO = $playerController->getSongDAO();
+  $test = $songDAO->getSongByID(5);
+  
+// $notes = $controller->getSongEvent();
+// $songtest = $controller->getSongByID(5);
+
+$info = var_dump($test);
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,15 +32,17 @@
     </style>
 </head>
 <body>
+<!-- <?php echo $info ?> -->
+
     <!-- Header/Menu -->
     <nav class="navbar is-black" role="navigation" aria-label="main navigation">
         <div class="navbar-menu">
             <div class="navbar-start">
             <a class="navbar-item" href="index.php">
             <img src="img/homebutton.png" alt="Home"></a>
-                <a class="navbar-item" href="#">Player</a>
+                <a class="navbar-item" href="player.php">Player</a>
                 <a class="navbar-item" href="library.php">Library</a>
-                <a class="navbar-item" href="#">Profile</a>
+                <a class="navbar-item" href="profile.php">Profile</a>
             </div>
         </div>
     </nav>
@@ -42,6 +55,11 @@
             <button class="button">STEP BACKWARD</button>
             <button class="button">TO START</button>
         </div>
+
+
+
+
+
 
 
         <figure class="image">

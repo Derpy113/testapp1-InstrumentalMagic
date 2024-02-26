@@ -24,6 +24,7 @@ class Connection
     }
     return $this->con; //It get's really ugly from here if connection fails
   }
+  
 
   public function getPDO():PDO
   {
