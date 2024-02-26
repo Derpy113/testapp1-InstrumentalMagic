@@ -45,18 +45,22 @@ LIBRARY ??
 Library.findAll  #getSong
 Song   #+sätt att få med sång till Player
 PLAYER
+  songTitleToPageHeader
   Player.loadSongData  #loadSongEvents
-               playHead
-                  |
-                  v
-  loadedSong = [["c'\2", "c'\2"], "c'\2", "g'\1", "g'\1"]
+
+                      playHead
+                         |
+                         v
+  loadedSongEvents = [["c'\2", "c'\2"], "c'\2", "g'\1", "g'\1"]
      // två noter i samma event, eller sätt som subarray
      // +Ska man redan här lägga över i en Javascript-array
-  playHead/songPosition
+  playHead/songPosition  [int = 0]
      // kolla att inte går utanför arrayen
-- stepForward
-- stepBackward
-- toStart
+  eventsArraySize  [count(loadedSongEvents)--]
+stepForward   [songPosition++]
+stepBackward  [songPosition--]
+toStart       [songPosition = 0]
+
 // getRating   ??
 // setRating
 //   timesRated
@@ -70,4 +74,9 @@ PLAYER
 LibraryDAO / SongDAO ??
 (UserDAO)
 
-
+             |
+             |
+ ao eu eo ua oe u ao eu  a oeu ao eu a oe ui oeau
+             |
+             |
+ 
