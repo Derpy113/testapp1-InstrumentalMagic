@@ -1,5 +1,8 @@
 <?php
   include_once("autoload.php");
+
+  $songController = new SongController();
+  $songs = $songController->getSongs();
 ?>
 
 
@@ -37,11 +40,9 @@
   <!-- Innehåll på sidan -->
   <main>
     
-    <?php $songsController = new SongController(); ?>
-    <?php $songs = $songsController->getSongs(); ?>
     <?php foreach ($songs as $song): ?>
         <div class="container">
-          <p>Title: <?= htmlspecialchars($song->getTitle()) ?></p>
+          <button><?php echo htmlspecialchars($song->Title) . " - " . htmlspecialchars($song->Artist) ; ?></button>          
         </div>
     <?php endforeach; ?>
 

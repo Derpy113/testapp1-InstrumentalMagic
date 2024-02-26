@@ -4,25 +4,29 @@
 
   class SongController
   {
-    private $songs;
-
-    public function getSongs() //
-    {
-      return $this->songs;
-    }
-      
-    public function loadSongs() //ändra namnet, fundera om den behövs
-    {
-      $con = new Connection();
-      $songDAO = new SongDAO($con);
-      $songs = $songDAO->findAll();
-      $this->songs = $songs;
-    }
+    private $loadSongs;
 
     public function __construct() //
     {
-      $this->loadSongs();
+      $con = new Connection();
+      $this->loadSongs = new SongDAO($con);
     }
+    
+    public function getSongs() //
+    {
+      $songs = $this->loadSongs->findAll();
+      return $songs;
+    }
+      
+    // public function loadSongs() //ändra namnet, fundera om den behövs
+    // {
+    //   $con = new Connection();
+    //   $songDAO = new SongDAO($con);
+    //   $songs = $songDAO->findAll();
+    //   $this->songs = $songs;
+    // }
+
+
 
   }
 
