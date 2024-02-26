@@ -36,16 +36,16 @@ SETTINGS
 LIBRARY ??
 
 # Controller ----
-Song
-Library.getSong
 //// most popular = most played
 //   highest rated songs
 ////   least popular
 //// latest played
 ////   oldest played
-  Library.searchSong
+//   Library.searchSong
+Library.findAll  #getSong
+Song   #+sätt att få med sång till Player
 PLAYER
-  Player.loadSongData
+  Player.loadSongData  #loadSongEvents
                playHead
                   |
                   v
