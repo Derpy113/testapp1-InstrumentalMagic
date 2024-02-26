@@ -42,8 +42,12 @@
     
     <?php foreach ($songs as $song): ?>
         <div class="container">
-          <button><?php echo htmlspecialchars($song->Title) . " - " . htmlspecialchars($song->Artist) ; ?></button>          
-        </div>
+        <form method="GET" action="player.php">
+          <input type="submit" name="$songID" id=$song class="button" 
+          value=<?php echo htmlspecialchars($song->Title) ." - " .
+                      htmlspecialchars($song->Artist) . "<br>" .
+                      "Genre: " . htmlspecialchars($song->Genre); ?> >
+        </form>
     <?php endforeach; ?>
 
   </main>
