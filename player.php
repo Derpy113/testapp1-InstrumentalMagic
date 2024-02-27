@@ -7,10 +7,22 @@
   //$song = $songDAO->getSongByID(5);
   $test2 = $playerController->getSongIDByURL();
   $song = $songDAO->getSongByID($test2);
+  
 // $notes = $controller->getSongEvent();
 // $songtest = $controller->getSongByID(5);
 
 $info = var_dump($song);
+if($song !== null)
+{ 
+    echo $song->getTitle();
+
+} 
+// else 
+// { 
+//     echo "Pick a song in Library!";
+
+// }
+
 //$songData = $playerController->getSongByID(5);
 
   

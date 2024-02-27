@@ -34,10 +34,10 @@
         return $this->songDAO->getSongByID($id);
     }
 
-    public function loadSong($id) {
-        $songData = $this->songDAO->getSongByID($id);
-        if ($songData) {
-            $this->currentSongNotes = explode(',' , $songData[0]->Song);
+    public function loadSongEvents($id) {
+        $currentSongNotes = $this->songDAO->getSongByID($id);
+        if ($currentSongNotes) {
+            $this->currentSongNotes = explode(',' , $currentSongNotes[0]->Song);
             $this->songPosition = 0;
         }
         // else {
