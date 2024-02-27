@@ -20,9 +20,19 @@
         return $this->songDAO;
     }
 
+
+    public function getSongIDByURL() {
+        if(isset($_GET['Song_ID'])){
+          return $_GET['Song_ID'];
+        } 
+    }    
+
+
+
     public function getSongByID($id) {
         return $this->songDAO->getSongByID($id);
     }
 
     
+
 }
