@@ -2,6 +2,7 @@
   include_once("autoload.php");
 
   $playerController = new PlayerController();
+
   $songDAO = $playerController->getSongDAO();
   //$song = $songDAO->getSongByID(5);
   $test2 = $playerController->getSongIDByURL();
@@ -10,6 +11,15 @@
 // $songtest = $controller->getSongByID(5);
 
 $info = var_dump($song);
+//$songData = $playerController->getSongByID(5);
+
+  
+// $notes = $controller->getSongEvent();
+// $songtest = $controller->getSongByID(5);
+
+ //$info = var_dump($songData);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +42,7 @@ $info = var_dump($song);
     </style>
 </head>
 <body>
-<!-- <?php echo $info ?> -->
+<?php echo $info ?> 
 
     <!-- Header/Menu -->
     <nav class="navbar is-black" role="navigation" aria-label="main navigation">
