@@ -48,14 +48,14 @@
   <!-- Innehåll på sidan -->
   <main>
     <div class="container">
-      <?php foreach ($songs as $song) {
-    echo "<form action='player.php' method='get'>
-            <input type='hidden' name='Song_ID' value='" . htmlspecialchars($song->Song_ID) . "'>
-            <button type='submit'>" . htmlspecialchars($song->Title) . "</button>
-          </form>"; }        ?>
+      <?php foreach ($songs as $song) 
+      {
+        echo "<form action='player.php' method='get'>
+              <input type='hidden' name='Song_ID' value='" . htmlspecialchars($song->Song_ID) . "'>
+              <button type='submit'>" . htmlspecialchars($song->Title) . "</button>
+              </form>";
+      }?>
     </div>
-
-
   </main>
 </body>
 </html>
