@@ -2,13 +2,23 @@
   include_once("autoload.php");
 
   $playerController = new PlayerController();
-  $songData = $playerController->getSongByID(5);
+
+  $songDAO = $playerController->getSongDAO();
+  //$song = $songDAO->getSongByID(5);
+  $test2 = $playerController->getSongIDByURL();
+  $song = $songDAO->getSongByID($test2);
+// $notes = $controller->getSongEvent();
+// $songtest = $controller->getSongByID(5);
+
+$info = var_dump($song);
+//$songData = $playerController->getSongByID(5);
 
   
 // $notes = $controller->getSongEvent();
 // $songtest = $controller->getSongByID(5);
 
- $info = var_dump($songData);
+ //$info = var_dump($songData);
+
 
 ?>
 
@@ -49,7 +59,7 @@
     <main>
 
     <div class="content-container">
-    <div class="songname">LÅTNAMN</div>
+    <div class="songname"> <?php if($song !== null){ echo $song->getTitle(); } else { echo "No song loaded!"; }?> </div>
         <div class="control-buttons">
             <button class="button">STEP FORWARD</button>
             <button class="button">STEP BACKWARD</button>
