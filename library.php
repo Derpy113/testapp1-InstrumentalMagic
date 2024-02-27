@@ -3,6 +3,14 @@
 
   $songController = new SongController();
   $songs = $songController->getSongs();
+
+  foreach ($songs as $song):
+    if(array_key_exists('bwaaa',$_GET)){
+      echo $song->Title;
+   }
+
+  endforeach;
+  
 ?>
 
 
@@ -39,16 +47,14 @@
 
   <!-- Innehåll på sidan -->
   <main>
-    
-    <?php foreach ($songs as $song): ?>
-        <div class="container">
-        <form method="GET" action="player.php">
-          <input type="submit" name="$songID" id=$song class="button" 
-          value=<?php echo htmlspecialchars($song->Title) ." - " .
-                      htmlspecialchars($song->Artist) . "<br>" .
-                      "Genre: " . htmlspecialchars($song->Genre); ?> >
-        </form>
-    <?php endforeach; ?>
+    <div class="container">
+      <?php foreach ($songs as $song) {
+    echo "<form action='player.php' method='get'>
+            <input type='hidden' name='Song_ID' value='" . htmlspecialchars($song->Song_ID) . "'>
+            <button type='submit'>" . htmlspecialchars($song->Title) . "</button>
+          </form>"; }        ?>
+    </div>
+
 
   </main>
 </body>
