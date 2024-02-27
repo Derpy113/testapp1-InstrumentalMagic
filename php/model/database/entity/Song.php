@@ -72,7 +72,7 @@
     
       public function setTimesPlayed(?int $timesPlayed): void
       {
-        $this->TimesPlayed = $timesPlayed;
+        $this->timesPlayed = $timesPlayed;
       }
     
       public function setTitle(?string $title): void
