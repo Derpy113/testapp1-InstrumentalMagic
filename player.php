@@ -2,13 +2,13 @@
   include_once("autoload.php");
 
   $playerController = new PlayerController();
-  $songDAO = $playerController->getSongDAO();
-  $test = $songDAO->getSongByID(5);
+  $songData = $playerController->getSongByID(5);
+
   
 // $notes = $controller->getSongEvent();
 // $songtest = $controller->getSongByID(5);
 
-$info = var_dump($test);
+ $info = var_dump($songData);
 
 ?>
 
@@ -32,7 +32,7 @@ $info = var_dump($test);
     </style>
 </head>
 <body>
-<!-- <?php echo $info ?> -->
+<?php echo $info ?> 
 
     <!-- Header/Menu -->
     <nav class="navbar is-black" role="navigation" aria-label="main navigation">

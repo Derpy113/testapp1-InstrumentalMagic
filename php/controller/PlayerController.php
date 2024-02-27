@@ -4,6 +4,7 @@
     class PlayerController {
     private $songDAO;
 
+
     public function __construct() //
     {
       $con = new Connection();
@@ -18,5 +19,10 @@
     public function getSongDAO() {
         return $this->songDAO;
     }
+
+    public function getSongByID($id) {
+        return $this->songDAO->getSongByID($id);
+    }
+
+    
 }
-        
