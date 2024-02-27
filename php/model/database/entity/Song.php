@@ -3,69 +3,69 @@
 
     class Song
     {
-      private ?string $Artist;
-      private ?string $Genre;
-      private ?float $AverageRating;
-      private ?string $Song;
-      private int $Song_ID;
-      private ?int $TimesPlayed;
-      private ?string $Title;
+      private ?string $artist;
+      private ?string $genre;
+      private ?float $averageRating;
+      private ?string $song;
+      private int $song_id;
+      private ?int $timesPlayed;
+      private ?string $title;
     
       // Getters
       public function getArtist(): ?string
       {
-        return $this->Artist;
+        return $this->artist;
       }
     
       public function getGenre(): ?string
       {
-        return $this->Genre;
+        return $this->genre;
       }
     
       public function getAverageRating(): ?float
       {
-        return $this->AverageRating;
+        return $this->averageRating;
       }
     
       public function getSong(): ?string
       {
-        return $this->Song;
+        return $this->song;
       }
     
       public function getSongId(): int
       {
-        return $this->Song_ID;
+        return $this->song_id;
       }
     
       public function getTimesPlayed(): ?int
       {
-        return $this->TimesPlayed;
+        return $this->timesPlayed;
       }
     
       public function getTitle(): ?string
       {
-        return $this->Title;
+        return $this->title;
       }
     
       // Setters
       public function setArtist(?string $artist): void
       {
-        $this->Artist = $artist;
+        $this->artist = $artist;
       }
     
       public function setGenre(?string $genre): void
       {
-        $this->Genre = $genre;
+        $this->genre = $genre;
       }
     
       public function setAverageRating(?float $averageRating): void
       {
-        $this->AverageRating = $averageRating;
+        $this->averageRating = $averageRating;
       }
     
       public function setSong(?string $song): void
       {
-        $this->Song = $song;
+        $this->song = $song;
       }
     
       // Cannot set song_id as it's defined as private (immutable)
@@ -77,7 +77,7 @@
     
       public function setTitle(?string $title): void
       {
-        $this->Title = $title;
+        $this->title = $title;
       }
     }
 
