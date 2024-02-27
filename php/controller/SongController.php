@@ -4,29 +4,22 @@
 
   class SongController
   {
-    private $loadSongs;
+    private $loadSongs; 
 
-    public function __construct() //
+    //automatiskt skapar en songDAO och hämtar all information som den innehåller och lägger det i loadSongs
+    public function __construct() 
     {
       $con = new Connection();
       $this->loadSongs = new SongDAO($con);
     }
     
-    public function getSongs() //
+    //Denna publik metod är avsedd att anropas utifrån för att hämta information i getsSongs().
+    //Genom att den anropar metoden findAll()
+    public function getSongs()
     {
       $songs = $this->loadSongs->findAll();
       return $songs;
-    }
-      
-    // public function loadSongs() //ändra namnet, fundera om den behövs
-    // {
-    //   $con = new Connection();
-    //   $songDAO = new SongDAO($con);
-    //   $songs = $songDAO->findAll();
-    //   $this->songs = $songs;
-    // }
-
-
+    }      
 
   }
 
