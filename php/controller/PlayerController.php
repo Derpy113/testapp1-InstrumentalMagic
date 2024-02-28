@@ -35,16 +35,13 @@
     }
 
     public function loadSongEvents($id) {
-        $currentSongNotes = $this->songDAO->getSongByID($id);
-        if ($currentSongNotes) {
-            $this->currentSongNotes = explode(',' , $currentSongNotes[0]->Song);
+        $song = $this->songDAO->getSongByID($id);
+        if ($song !== null) {
+            // Använder 'song' egenskapen från Song-klassen
+            $this->currentSongNotes = explode(',', $song->getSong());
             $this->songPosition = 0;
         }
-        // else {
-        //     $this->currentSongNotes = [];
-        //     $this->songPosition = 0;
-        // }
-        }
+    }
 
     public function stepForward() {
         if ($this->songPosition < count($this->currentSongNotes) - 1) {
@@ -61,7 +58,25 @@
 
     }
     public function getCurrentNote() {
-        return $this->currentSongNotes[$this->songPosition];
-        
+        if (isset($this->currentSongNotes[$this->songPosition])) {
+            return $this->currentSongNotes[$this->songPosition];
+        }
+        return ''; // Inga noter laddade eller positionen är utanför intervallet
     }
+
+
+    public function handleAjaxRequest() {
+        $action = $_POST['action'] ?? '';
+        if (method_exists($this, $action)) {
+            $this->$action(); // Kör metoden baserat på 'action' värde (t.ex. 'stepForward')
+    
+            // Svara med den nya positionen och noten
+            echo json_encode([
+                'currentNote' => $this->getCurrentNote(),
+                'position' => $this->songPosition,
+            ]);
+            exit;
+        }
+    }
+
 }
