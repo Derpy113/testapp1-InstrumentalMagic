@@ -13,7 +13,8 @@
 // $notes = $controller->getSongEvent();
 // $songtest = $controller->getSongByID(5);
 
-$info = var_dump($test);
+ //$info = var_dump($songData);
+
 
 ?>
 
@@ -37,7 +38,7 @@ $info = var_dump($test);
     </style>
 </head>
 <body>
-<!-- <?php echo $info ?> -->
+<?php echo $info ?> 
 
     <!-- Header/Menu -->
     <nav class="navbar is-black" role="navigation" aria-label="main navigation">
@@ -54,7 +55,7 @@ $info = var_dump($test);
     <main>
 
     <div class="content-container">
-    <div class="songname">LÅTNAMN</div>
+    <div class="songname"> <?php if($song !== null){ echo $song->getTitle(); } else { echo "No song loaded!"; }?> </div>
         <div class="control-buttons">
             <button class="button">STEP FORWARD</button>
             <button class="button">STEP BACKWARD</button>
