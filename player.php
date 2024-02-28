@@ -126,6 +126,17 @@ $(document).ready(function() {
 
     $("#stepForward").on("click", stepForward);
 
+    var stepBackward = function() {
+    if (songPosition > 1) {
+        $("#" + notes[songPosition-1]).css("opacity", 0);
+        songPosition--;
+        $("#" + notes[songPosition-1]).css("opacity", 1);
+    }
+};
+
+
+$("#stepBackward").on("click", stepBackward);
+
     var interval;
     // $("#play").on("click", interval);
 
