@@ -1,10 +1,15 @@
 <?php
+// echo 1;
   include_once("autoload.php");
 
+// echo 2;
   $playerController = new PlayerController();
+// echo 3;
   $songDAO = $playerController->getSongDAO();
+// echo 4;
   $test = $songDAO->getSongByID(5);
   
+// echo 5;
 // $notes = $controller->getSongEvent();
 // $songtest = $controller->getSongByID(5);
 
