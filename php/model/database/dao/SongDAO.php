@@ -15,46 +15,28 @@ Class SongDAO
   // informationen som en array av Song-objekt, där varje objekt repsresterar en rad i tabellen.
   public function findAll()  
   {
-    $sqlQuery = 'SELECT * FROM Songs';
+    $sqlQuery = 'SELECT * FROM songs';
     $stmt = $this->con->getPDO()->prepare($sqlQuery);
     $stmt->execute();
     
     return $stmt->fetchAll(PDO::FETCH_CLASS, Song::class); 
     
   }
-
-
-  // public function getSongByID($songid) {
-    
-  //   $sqlQuery = "SELECT * FROM Songs WHERE Song_ID = :songID";
-  //   $stmt = $this->con->getPDO()->prepare($sqlQuery);
-  //   $stmt->execute([ 'songID' => $songid ]);
-  //   $stmt->setFetchMode(PDO::FETCH_CLASS, 'Song');
-  //   $stmt->execute();
-  //   return $stmt->fetch(PDO::FETCH_CLASS, Song::class);
-
-  // }
-
-
-
-  public function getSongByID($songid)
-  {
-      $sqlQuery = 'SELECT * FROM Songs WHERE Song_ID = :songID';
-      $statement = $this->con->getPDO()->prepare($sqlQuery);
-      $statement->execute([ 'songID' => $songid ]);
-      $statement->setFetchMode(PDO::FETCH_CLASS, 'Song');
-      $songid = $statement->fetch();
-      if ($songid == false )
-      {
-        return NULL;
-      }
-      else
-      {
-        return $songid;
-      }
+public function getSongByID($songid) {
+  
+  try {
+    $sqlQuery = "SELECT * FROM songs WHERE Song_ID = :songID";
+    $stmt = $this->con->getPDO()->prepare($sqlQuery);
+    $stmt->bindParam(':songID', $songid);
+    $stmt->execute();
+    $stmt->setFetchMode(PDO::FETCH_CLASS, Song::class);
+    return $stmt->fetch();
   }
-
-
+  catch (Exception $ex) {
+    echo $ex;
+  }
+  // return $stmt->fetch(PDO::FETCH_CLASS, Song::class);
+}
 
 
 // public function getUserByUsername($username)
