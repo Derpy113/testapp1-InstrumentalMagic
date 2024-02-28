@@ -25,15 +25,15 @@
      inkscape:document-units="mm"
      showgrid="false"
      width="123mm"
-     inkscape:zoom="1.1677981"
-     inkscape:cx="281.29862"
-     inkscape:cy="160.55857"
-     inkscape:window-width="1758"
-     inkscape:window-height="1030"
-     inkscape:window-x="132"
+     inkscape:zoom="1.6515159"
+     inkscape:cx="149.55956"
+     inkscape:cy="241.59622"
+     inkscape:window-width="1029"
+     inkscape:window-height="1033"
+     inkscape:window-x="824"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g1642-9-1-7"
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:snap-object-midpoints="true" />
@@ -164,7 +164,7 @@
          d="M 941.97422,341.49562 H 1383.7755"
          id="use46660-5-2-1" />
       <g
-         id="g4301"
+         id="e1_1"
          opacity="0"
          style="stroke-width:2.32861;stroke-miterlimit:4;stroke-dasharray:none;image-rendering:auto"
          transform="matrix(0.96180158,0,0,0.96180158,-195.21571,-84.347338)">
@@ -176,7 +176,7 @@
            r="13.024382" />
       </g>
       <g
-         id="g4673"
+         id="b0_2"
          opacity="0"
          style="stroke-width:2.32861;stroke-miterlimit:4;stroke-dasharray:none;image-rendering:auto"
          transform="matrix(0.96180158,0,0,0.96180158,-195.21571,-39.198585)">
@@ -188,7 +188,7 @@
            r="13.024382" />
       </g>
       <g
-         id="g4713"
+         id="g0_3"
          opacity="0"
          style="stroke-width:2.32861;stroke-miterlimit:4;stroke-dasharray:none;image-rendering:auto"
          transform="matrix(0.96180158,0,0,0.96180158,-195.21571,5.9501693)">
@@ -200,7 +200,7 @@
            r="13.024382" />
       </g>
       <g
-         id="g4753"
+         id="d0_4"
          opacity="0"
          style="stroke-width:2.32861;stroke-miterlimit:4;stroke-dasharray:none;image-rendering:auto"
          transform="matrix(0.96180158,0,0,0.96180158,-195.21571,51.098922)">
@@ -212,7 +212,7 @@
            r="13.024382" />
       </g>
       <g
-         id="g4793"
+         id="a-1_5"
          opacity="0"
          style="stroke-width:2.32861;stroke-miterlimit:4;stroke-dasharray:none;image-rendering:auto"
          transform="matrix(0.96180158,0,0,0.96180158,-195.21571,96.247604)">
@@ -224,7 +224,7 @@
            r="13.024382" />
       </g>
       <g
-         id="g4833"
+         id="e-1_6"
          opacity="0"
          style="stroke-width:2.32861;stroke-miterlimit:4;stroke-dasharray:none;image-rendering:auto"
          transform="matrix(0.96180158,0,0,0.96180158,-195.21571,141.39654)">
@@ -239,7 +239,7 @@
          id="g6979"
          transform="translate(-0.2838026)">
         <g
-           id="g141272-6-6-8"
+           id="f1_1"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-320.37866,-119.22893)">
@@ -257,7 +257,7 @@
              r="13.024382" />
         </g>
         <g
-           id="g4277"
+           id="ges1_1"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-252.58555,-119.91376)">
@@ -275,7 +275,7 @@
              r="13.024382" />
         </g>
         <g
-           id="g4283"
+           id="g1_1"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-184.69912,-120.63842)">
@@ -293,7 +293,7 @@
              r="13.024382" />
         </g>
         <g
-           id="g4289"
+           id="aes1_1"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-117.54588,-120.41098)">
@@ -311,7 +311,7 @@
              r="13.024382" />
         </g>
         <g
-           id="g4295"
+           id="a1_1"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-49.822815,-121.78065)">
@@ -347,7 +347,7 @@
              r="13.024382" />
         </g>
         <g
-           id="g4645"
+           id="c1_2"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-320.37866,-74.080141)">
@@ -365,7 +365,7 @@
              r="13.024382" />
         </g>
         <g
-           id="g4651"
+           id="cis1_2"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-252.58555,-74.764993)">
@@ -383,7 +383,7 @@
              r="13.024382" />
         </g>
         <g
-           id="korv"
+           id="g147"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-184.69912,-75.489668)">
@@ -401,7 +401,7 @@
              r="13.024382" />
         </g>
         <g
-           id="g4663"
+           id="dis1_2"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-117.54588,-75.262209)">
@@ -419,7 +419,7 @@
              r="13.024382" />
         </g>
         <g
-           id="g4669"
+           id="d1_2"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-49.822815,-76.631967)">
@@ -455,7 +455,7 @@
              r="13.024382" />
         </g>
         <g
-           id="g4685"
+           id="aes0_3"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-320.37866,-28.931386)">
@@ -473,7 +473,7 @@
              r="13.024382" />
         </g>
         <g
-           id="g4691"
+           id="a0_3"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-252.58555,-29.616245)">
@@ -491,7 +491,7 @@
              r="13.024382" />
         </g>
         <g
-           id="g4697"
+           id="bes0_3"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-184.69912,-30.340917)">
@@ -509,7 +509,7 @@
              r="13.024382" />
         </g>
         <g
-           id="g4703"
+           id="b0_3"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-117.54588,-30.113463)">
@@ -527,7 +527,7 @@
              r="13.024382" />
         </g>
         <g
-           id="g4709"
+           id="c1_3"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-49.822815,-31.483213)">
@@ -563,10 +563,10 @@
              r="13.024382" />
         </g>
         <g
-           id="glass"
            opacity="0"
            style="image-rendering:auto"
-           transform="matrix(1.1287171,0,0,1.1287171,-320.37866,16.217366)">
+           transform="matrix(1.1287171,0,0,1.1287171,-320.37866,16.217366)"
+           id="ees0_4">
           <circle
              style="mix-blend-mode:normal;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;filter:url(#filter54290-9-9-3);image-rendering:auto"
              id="circle4721"
@@ -581,7 +581,7 @@
              r="13.024382" />
         </g>
         <g
-           id="g4731"
+           id="e0_4"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-252.58555,15.532487)">
@@ -599,7 +599,7 @@
              r="13.024382" />
         </g>
         <g
-           id="g4737"
+           id="f0_4"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-184.69912,14.807839)">
@@ -617,7 +617,7 @@
              r="13.024382" />
         </g>
         <g
-           id="g4743"
+           id="ges0_4"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-117.54588,15.035271)">
@@ -635,7 +635,7 @@
              r="13.024382" />
         </g>
         <g
-           id="g4749"
+           id="g0_4"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-49.822815,13.66554)">
@@ -671,7 +671,7 @@
              r="13.024382" />
         </g>
         <g
-           id="g4765"
+           id="bes-1_5"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-320.37866,61.366119)">
@@ -689,7 +689,7 @@
              r="13.024382" />
         </g>
         <g
-           id="g4771"
+           id="b-1_5"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-252.58555,60.68124)">
@@ -707,7 +707,7 @@
              r="13.024382" />
         </g>
         <g
-           id="g4777"
+           id="c0_5"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-184.69912,59.956581)">
@@ -725,7 +725,7 @@
              r="13.024382" />
         </g>
         <g
-           id="g4783"
+           id="dis0_5"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-117.54588,60.184024)">
@@ -743,7 +743,7 @@
              r="13.024382" />
         </g>
         <g
-           id="g4789"
+           id="d0_5"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-49.822815,58.814293)">
@@ -779,10 +779,10 @@
              r="13.024382" />
         </g>
         <g
-           id="g4805"
+           id="f-1_6"
            opacity="0"
            style="image-rendering:auto"
-           transform="matrix(1.1287171,0,0,1.1287171,-320.37866,106.51493)">
+           transform="matrix(1.1915581,0,0,1.0567182,-393.3693,121.14342)">
           <circle
              style="mix-blend-mode:normal;fill:#000000;fill-opacity:1;stroke:#000000;stroke-opacity:1;filter:url(#filter54290-9-9-3);image-rendering:auto"
              id="circle4801"
@@ -797,7 +797,7 @@
              r="13.024382" />
         </g>
         <g
-           id="g4811"
+           id="fis-1_6"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-252.58555,105.83013)">
@@ -815,7 +815,7 @@
              r="13.024382" />
         </g>
         <g
-           id="g4817"
+           id="g-1_6"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-184.69912,105.10519)">
@@ -833,7 +833,7 @@
              r="13.024382" />
         </g>
         <g
-           id="g4823"
+           id="aes-1_6"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-117.54588,105.33264)">
@@ -851,7 +851,7 @@
              r="13.024382" />
         </g>
         <g
-           id="g4829"
+           id="a-1_6"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-49.822815,103.96304)">
