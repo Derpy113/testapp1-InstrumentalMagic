@@ -15,7 +15,7 @@ Class SongDAO
   // informationen som en array av Song-objekt, där varje objekt repsresterar en rad i tabellen.
   public function findAll()  
   {
-    $sqlQuery = 'SELECT * FROM Songs';
+    $sqlQuery = 'SELECT * FROM songs';
     $stmt = $this->con->getPDO()->prepare($sqlQuery);
     $stmt->execute();
     
@@ -55,8 +55,6 @@ Class SongDAO
   //       return $songid;
   //     }
   // }
-
-
 
 
 // public function getUserByUsername($username)

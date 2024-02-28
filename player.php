@@ -1,7 +1,10 @@
 <?php
+// echo 1;
   include_once("autoload.php");
 
+// echo 2;
   $playerController = new PlayerController();
+
 
   $songTitle = "No song loaded!";
 
@@ -48,6 +51,7 @@
 //$songData = $playerController->getSongByID(5);
 
   
+// echo 5;
 // $notes = $controller->getSongEvent();
 // $songtest = $controller->getSongByID(5);
 
