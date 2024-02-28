@@ -1,0 +1,22 @@
+.star-rating {
+  color: gold;
+  font-size: 1.2em;
+}
+.star-rating .gray {
+  color: #ccc;
+}
+
+.limited-box {
+  max-width: 280px; /* Begränsa bredden */
+  margin: auto; /* Centrera boxen */
+  overflow-y: auto; /* Bryt långa ord */
+  word-wrap: break-word;
+}
+
+
+.text-title-h1{
+  font-family: "Caveat", cursive;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 30px;
+}
