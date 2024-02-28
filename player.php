@@ -19,7 +19,7 @@
           $eventsString = $song->getSong();
           $currentSongNotes = explode(',', $eventsString);
         
-          print_r($currentSongNotes);
+         // print_r($currentSongNotes);
       }
 
 
@@ -119,7 +119,7 @@ $(document).ready(function() {
     notes.push("<?php echo $songEvent ?>")
 
     <?php } ?>
-    // alert(notes);
+    //     alert(notes);
     // document.querySelectorAll('["id"='c1_2'")
     // alert(document.querySelector('[id="korv"]'))
 
