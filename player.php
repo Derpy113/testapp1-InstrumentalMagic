@@ -26,6 +26,9 @@
     <title>Instrumental Magic Player</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
     <style>
 
         body {
@@ -38,7 +41,7 @@
     </style>
 </head>
 <body>
-<?php echo $info ?> 
+
 
     <!-- Header/Menu -->
     <nav class="navbar is-black" role="navigation" aria-label="main navigation">
