@@ -181,7 +181,6 @@ $("#stepBackward").on("click", stepBackward);
                     <!-- <object data="img/guitar_fretboard.svg" type="image/svg+xml"></object> -->
                     <?php include("img/guitar_fretboard.svg") ?>
                     </figure>
-                    <svg>Your SVG code here</svg>
     </div>
     
     </main>
