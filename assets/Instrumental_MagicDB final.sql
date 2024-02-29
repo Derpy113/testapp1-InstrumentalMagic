@@ -81,7 +81,7 @@ INSERT INTO `songs` (`Song_ID`, `song`, `artist`, `genre`, `timesPlayed`, `avera
 (5, 'c1_2,c1_2,g1_1,g1_1,a1_1,a1_1,g1_1,f1_1,f1_1,e1_1,e1_1,d1_2,d1_2,c1_2,', 'Anon.', 'Children', 8, 3.5, 'Blinka Lilla Stjärna'),
 (6, 'd0_4 g0_3,f0_4 bes0_3,g0_4 c1_3,d0_4 g0_3,f0_4 bes0_3,aes0_4 des1_3,g0_4 c1_3,', 'Deep Purple', 'Rock', 11, 4.9, 'Smoke on the water'),
 (7, 'a-1_5,b-1_5,c0_5,a-1_5,b-1_5,c0_5,a-1_5,b-1_5,c0_5,f-1_6,g-1_6,a-1_5,f-1_6,g-1_6,a-1_5,g-1_6,c0_5,b-1_5,', 'Judas Priest', 'Rock', 20, 4.2, 'Breaking the law'),
-(8, 'a0_3,b0_2,c1_2,d1_2,e1_1,c1_2,e1_1,dis1_1,b0_2,dis1_1,d1_2,bes0_3,d1_2,', 'Edvard Grieg', 'Classical', 15, 3.6, 'I bergakungens sal');
+(8, 'a0_3,b0_2,c1_2,d1_2,e1_1,c1_2,e1_1,dis1_2,b0_2,dis1_2,d1_2,bes0_3,d1_2,', 'Edvard Grieg', 'Classical', 15, 3.6, 'I bergakungens sal');
 
 -- --------------------------------------------------------
 
