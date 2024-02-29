@@ -1,6 +1,14 @@
 <?php
-        //include("login.php")
-    ?>
+session_start();
+
+// Kontrollera om användaren är inloggad
+if (!isset($_SESSION['username'])) {
+    // Användaren är inte inloggad, omdirigera till inloggningssidan
+    header("Location: loginpage.php");
+    exit;
+}
+?>
+
     <!DOCTYPE html>
     <html lang="en">
     <head>
