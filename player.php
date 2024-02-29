@@ -131,6 +131,8 @@ $(document).ready(function() {
         $("#" + notes[songPosition++]).css("opacity", 1)
     };
 
+
+    
     $("#stepForward").on("click", stepForward);
 
     var stepBackward = function() {
@@ -147,30 +149,34 @@ $("#stepBackward").on("click", stepBackward);
     var interval;
     // $("#play").on("click", interval);
 
-    $("#play").on("click", function() {
-        interval = setInterval(function() {
+$("#play").on("click", function() {
+    clearInterval(interval);
+
+    interval = setInterval(function() {
+        if (songPosition >= notes.length - 1) {
+            clearInterval(interval);
+        } else {
             stepForward();
-        }, 1000);
-    });
+        }
+    }, 1000);
+});
 
     $("#stop").on("click", function() {
         clearInterval(interval);
     });
+    
+    var toStart = function() {
+    if (songPosition > 0) {
+        $("#" + notes[songPosition-1]).css("opacity", 0);
+    }
+    songPosition = 0;
+    $("#" + notes[songPosition]).css("opacity", 1);
+};
+
+$("#toStart").on("click", toStart);
 
 });
 
-// function sendAction(action) {
-//     fetch('player.php', {
-//         method: 'POST',
-//         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-//         body: 'action=' + action
-//     })
-//     .then(response => response.json())
-//     .then(data => {
-//         document.getElementById('currentNote').textContent = 'Current Note: ' + data.currentNote;
-//     })
-//     .catch(error => console.error('Error:', error));
-// }
 
 </script>
 
