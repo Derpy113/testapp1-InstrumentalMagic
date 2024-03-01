@@ -37,49 +37,48 @@
         <nav class="navbar is-black" role="navigation" aria-label="main navigation">
             <div class="navbar-menu">
                 <div class="navbar-start">
-                    <a class="navbar-item" href="index.php">Home</a>
-                    <a class="navbar-item" href="player.php">Player</a>
-                    <a class="navbar-item" href="library.php">Library</a>
-                    <a class="navbar-item" href="profile.php">Profile</a>
+                    <!-- <a class="navbar-item" href="index.php">Home</a> -->
+                    <a class="navbar-item button-image player mr-2" href="player.php">Player</a>
+                    <a class="navbar-item button-image library mr-2" href="library.php">Library</a>
+                    <a class="navbar-item button-image profile" href="profile.php">Profile</a>
                 </div>
             </div>
         </nav>
 
         <!-- Innehåll på sidan -->
-        <main>
+    <main>
         <div class="container">
-    <h1 class="title">Reviews</h1>
-    <?php if (empty($reviews)): ?>
-        <div class="notification is-warning">
-            <p>There are no reviews.</p>
-        </div>
-         <?php else: ?>
-            <?php foreach ($reviews as $review): ?>
-                <div class="box limited-box">
-                    <article class="media"> <!-- Korrekt stavning av article här -->
-                        <figure class="media-left">
-                            <p class="image is-64x64">
-                                <?php if ($review->getProfilePic() !== null): ?>
-                                    <!-- Lägg till echo för att skriva ut base64-strängen -->
-                                    <img src="data:image/jpeg;base64,<?php echo $review->getProfilePic() ?>" alt="ProfilePic">
-                                <?php endif; ?>
-                            </p>
-                        </figure>
-                        <div class="media-content">
-                            <p><strong><?= htmlspecialchars($review->getUsername()) ?>:</strong></p>
-                            <div class="star-rating">
-                                <?php for ($i = 1; $i <= $review->getRating(); $i++): ?>
-                                    <span>★</span>
-                                <?php endfor; ?>
+        <?php if (empty($reviews)): ?>
+            <div class="notification is-warning">
+                <p>There are no reviews.</p>
+            </div>
+            <?php else: ?>
+                <?php foreach ($reviews as $review): ?>
+                    <div class="box limited-box">
+                        <article class="media"> <!-- Korrekt stavning av article här -->
+                            <figure class="media-left">
+                                <p class="image is-64x64">
+                                    <?php if ($review->getProfilePic() !== null): ?>
+                                        <!-- Lägg till echo för att skriva ut base64-strängen -->
+                                        <img src="data:image/jpeg;base64,<?php echo $review->getProfilePic() ?>" alt="ProfilePic">
+                                    <?php endif; ?>
+                                </p>
+                            </figure>
+                            <div class="media-content">
+                                <p><strong><?= htmlspecialchars($review->getUsername()) ?>:</strong></p>
+                                    <div class="star-rating">
+                                        <?php for ($i = 1; $i <= $review->getRating(); $i++): ?>
+                                            <span>★</span>
+                                        <?php endfor; ?>
+                                    </div>
+                                <p><?= htmlspecialchars($review->getTextContent()) ?></p>
                             </div>
-                        <p><?= htmlspecialchars($review->getTextContent()) ?></p>
-                    </div>
-                </article>                              
-            </div> 
-        <?php endforeach; ?>
-    <?php endif; ?> 
-</div>
-        </main>
+                        </article>                              
+                    </div> 
+                <?php endforeach; ?>
+            <?php endif; ?> 
+        </div>
+    </main>
 
     </body>
     </html>

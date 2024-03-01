@@ -26,14 +26,14 @@
      showgrid="false"
      width="123mm"
      inkscape:zoom="1.6515159"
-     inkscape:cx="149.55956"
-     inkscape:cy="241.59622"
-     inkscape:window-width="1029"
-     inkscape:window-height="1033"
-     inkscape:window-x="824"
-     inkscape:window-y="0"
+     inkscape:cx="307.29344"
+     inkscape:cy="243.10998"
+     inkscape:window-width="1484"
+     inkscape:window-height="1030"
+     inkscape:window-x="367"
+     inkscape:window-y="3"
      inkscape:window-maximized="0"
-     inkscape:current-layer="g1642-9-1-7"
+     inkscape:current-layer="g6979"
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:snap-object-midpoints="true" />
@@ -383,7 +383,7 @@
              r="13.024382" />
         </g>
         <g
-           id="g147"
+           id="d1_2"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-184.69912,-75.489668)">
@@ -419,7 +419,7 @@
              r="13.024382" />
         </g>
         <g
-           id="d1_2"
+           id="e1_2"
            opacity="0"
            style="image-rendering:auto"
            transform="matrix(1.1287171,0,0,1.1287171,-49.822815,-76.631967)">
