@@ -9,6 +9,7 @@
 
  if(isset($_POST['submit']))
  {
+    echo "111";
     if(isset($_POST['submit'])) //this "if" is always be true. Can be removed if it 
     {                           //will only ever be used when the statement is true.
         $loginService = new LoginService($_POST['user'], $_POST['pass']);
