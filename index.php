@@ -1,6 +1,6 @@
     <?php
         include_once("autoload.php");
-        require 'router.php';
+       // require 'router.php';
 
         $reviewController = new ReviewController();
         $reviews = $reviewController->showReviews();
