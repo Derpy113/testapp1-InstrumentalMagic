@@ -4,59 +4,14 @@
 
 // echo 2;
   $playerController = new PlayerController();
-
-
   $songTitle = "No song loaded!";
-
-  // Ladda låten baserat på Song_ID från URL
+  
   if (isset($_GET['Song_ID'])) {
       $songID = $_GET['Song_ID'];
-      $song = $playerController->getSongByID($songID);
-    //   $songEvents = $playerController->loadSongEvents($song);
-
-      if ($song !== null) {
-          $songTitle = $song->getTitle();
-          $eventsString = $song->getSong();
-          $currentSongNotes = explode(',', $eventsString);
-        
-         // print_r($currentSongNotes);
-      }
-
-
-
+      $songTitle = $playerController->getSongTitleByID($songID);
+      $currentSongNotes = $playerController->getSongNotesByID($songID);
   }
-
-
-
-  //$songDAO = $playerController->getSongDAO();
-  //$song = $songDAO->getSongByID(5);
-  //$test2 = $playerController->getSongIDByURL();
-  //$song = $songDAO->getSongByID($test2);
-
-// $notes = $controller->getSongEvent();
-// $songtest = $controller->getSongByID(5);
-
-// $info = var_dump($song);
-// if($song !== null)
-// { 
-//     echo $song->getTitle();
-
-// } 
-// else 
-// { 
-//     echo "Pick a song in Library!";
-
-// }
-
-//$songData = $playerController->getSongByID(5);
-
   
-// echo 5;
-// $notes = $controller->getSongEvent();
-// $songtest = $controller->getSongByID(5);
-
- //$info = var_dump($songData);
-
 
 ?>
 
@@ -102,7 +57,6 @@
 
     <div class="content-container">
     <div class="songname"> <?php echo $songTitle; ?> </div>    
-
 <div class="control-buttons">
     <button id="stepForward">STEP FORWARD</button>
     <button id="stepBackward">STEP BACKWARD</button>
@@ -113,8 +67,8 @@
 
 <script>
 $(document).ready(function() {
-    notes = [];
-    songPosition = 0;
+    var notes = <?php echo json_encode($currentSongNotes); ?>;
+    var songPosition = 0;
     <?php foreach ($currentSongNotes as $songEvent) { ?>
     notes.push("<?php echo $songEvent ?>")
 
@@ -184,8 +138,7 @@ $("#toStart").on("click", toStart);
 
 
         <figure class="image">
-                    <!-- <object data="img/guitar_fretboard.svg" type="image/svg+xml"></object> -->
-                    <?php include("img/guitar_fretboard.svg") ?>
+                        <?php include("img/guitar_fretboard.svg") ?>
                     </figure>
     </div>
     
