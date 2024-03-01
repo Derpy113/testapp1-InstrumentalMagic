@@ -18,8 +18,14 @@ body {
     background-color: black !important;
 }
 
+.text-title-h1{
+    font-family: "Caveat", cursive;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 30px;
+}
 
-/* Meny */
+/* Meny - profile, library, player */
 .navbar-menu {
     justify-content: center;
     display: flex;
@@ -39,7 +45,7 @@ body {
     display: flex;
 }
 
-/* Menyknappar */
+/* Menyknappar - player, library, proflie */
 .navbar-item {
     font-size: 1.5rem;
     width: auto;

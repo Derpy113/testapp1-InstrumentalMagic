@@ -1,0 +1,42 @@
+.star-rating {
+  color: gold;
+  font-size: 1.2em;
+}
+
+
+.limited-box {
+  max-width: 280px; /* Begränsa bredden */
+  margin: auto; /* Centrera boxen */
+  overflow-y: auto; /* Bryt långa ord */
+  word-wrap: break-word;
+  background-color: black;
+  color: white;
+}
+
+.media-content p strong {
+  color: white;
+}
+
+.navbar-item.button-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  width: 150px; /* Eller den bredd du föredrar */
+  height: 80px; /* Eller den höjd du föredrar */
+  color: white; /* Eller den textfärg du föredrar */
+  text-decoration: none;
+}
+
+.navbar-item.button-image.player { background-image: url('../testapp1-InstrumentalMagic/img/ButtonPic/Spaceplayer2.jpg'); }
+.navbar-item.button-image.library { background-image: url('../testapp1-InstrumentalMagic/img/ButtonPic/psykadeliskspelare3.jpg'); }
+.navbar-item.button-image.profile { background-image: url('../testapp1-InstrumentalMagic/img/ButtonPic/rocker2.jpg'); }
+
+.navbar-item.button-image {
+  transition: transform 0.3s ease; /* Lägger till en mjuk övergångseffekt */
+}
+
+.navbar-item.button-image:hover {
+  transform: scale(1.1); /* Gör knappen 10% större när muspekaren är över */
+}
