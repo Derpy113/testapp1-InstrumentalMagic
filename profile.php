@@ -1,5 +1,6 @@
 <?php
-        //include("login.php")
+        session_start();
+        include_once("autoload.php");
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -40,6 +41,22 @@
             <div class="container">
                 <p>Detta är din Profile hihi...</p>
                 <p>text på hemsida, gitarr e bra!</p>
+                <?php
+                $_SESSION['username'] = NULL;
+                //$_SESSION['username'] = "hallå";
+                if ($_SESSION['username'] == NULL || $_SESSION['password'] == NULL)
+                {
+                    echo "Du är inte inloggad";
+                }
+                else
+                {
+                    echo nl2br("Namn: " . $_SESSION['username'] . "\n" . "Lösenord (woops :3): " . $_SESSION['password']);
+                }
+                ?>
+
+
+
+
             </div>
         </main>
 
