@@ -25,6 +25,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        h1 {
+            color: white;
+        }
+        h2 {
+            color: white;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -34,11 +42,11 @@
     <div id="form">
         <h1>Create account</h1>
         <form name="form" method="POST">
-            <label>Username: </label>
+            <label><h2>Username: </h2></label>
             <input type="text" id="user" required name="user" value=<?php echo $ca->GetUsernameInput(); ?>>
             <label style="color: red"><?php echo $ca->GetUsernameError(); ?></label> <br>
             
-            <label>Password: </label>
+            <label><h2>Password: </h2></label>
             <input type="password" id="pass" required name="pass" value=<?php echo $ca->GetPasswordInput(); ?>>
             <label style="color: red"><?php echo $ca->GetPasswordError(); ?></label> <br> <br>
             

@@ -1,6 +1,12 @@
 <?php
+ 
+ //header("Location: " . "http://localhost/testapp1-InstrumentalMagic/index.php");
 
- include_once("autoload.php");
+ session_start(); // Griefing (づ｡◕‿‿◕｡)づ
+
+ $rootDir = dirname(dirname(getcwd()));
+ include_once ("$rootDir\\autoload.php");
+
  if(isset($_POST['submit']))
  {
     if(isset($_POST['submit'])) //this "if" is always be true. Can be removed if it 
@@ -9,13 +15,23 @@
     }
      if ($loginService->login() == true)
      {
-         $_SESSION['username'] = $login->GetUsernameInput();
-         $_SESSION['password'] = $login->GetPasswordInput();
-         //If this doesn't work, then someone forgot to change
-         //this variable on a different page.
-         header("Location: " . $_SESSION['pageBeforeLogin']);
+         //$_SESSION['username'] = $loginService->GetUsername();
+         //$_SESSION['password'] = $loginService->GetPassword();
+
+         $_SESSION['user_id'] = $loginService->getUserProfileID();
+         $rootDir = dirname(dirname(getcwd()));
+
+         header("Location: " . "http://localhost/InstrumentalMagic/testapp1-InstrumentalMagic/profile.php");
+     }
+     else
+     {
+        http_response_code(500);
+        header("Status: Username is required");
+        header("Location: " . "http://localhost/InstrumentalMagic/testapp1-InstrumentalMagic/loginpage.php");
      }
  }
+
+
 
  if(array_key_exists('createAccountButton', $_POST)) { //JOSEF TODO Controller är oftast den som använder Header, ha det som allmän regel
      header("Location: createaccountpage.php");        //Lägg dessa två i Controller (I router?)
