@@ -13,14 +13,14 @@
 <body>
     <div id="form">
         <h1>Log in</h1>
-        <form name="loginform" method="POST" action="php/controller/login.php">
+        <form name="loginform" method="POST" action="php/controller/loginpagecontroller.php">
             <label>Username: </label>
-            <input type="text" id="user" name="user" required value=<?php echo $login->GetUsernameInput(); ?>> <br> <!-- get $_SESSION variables here instead now that login no longer exists -->
+            <input type="text" id="user" name="user" required value=<?php if(isset($_POST['user'])) { echo $_POST['user']; } else { echo ""; }?>> <br> <!-- get $_SESSION variables here instead now that login no longer exist????s -->
             
             <label>Password: </label>
-            <input type="password" id="pass" name="pass" required value=<?php echo $login->GetPasswordInput(); ?>> <br>
+            <input type="password" id="pass" name="pass" required value=<?php $_SERVER["Status"]?>> <br> <!-- get $_SESSION variables here instead now that login no longer exist????s -->
             
-            <label style="color: red"><?php echo $login->GetLoginError(); ?></label> <br>
+            
 
             <input type="submit" id="btn" value="Login" name="submit">
         </form>
