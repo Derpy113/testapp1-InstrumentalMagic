@@ -15,5 +15,8 @@
       $reviewsToShow = array_slice($allReviews,0,4);
       return $reviewsToShow;
     }
+    public function addReview($UserProfile_ID, $textContent, $rating) {
+      return $this->getReviews->insertReview($UserProfile_ID, $textContent, $rating);
+  }
 
   }
