@@ -43,6 +43,18 @@ class UserDAO
         $statement = $this->con->getPDO()->prepare($sqlQuery); 
         $statement->execute([ 'username' => $username, 'userPassword' => $userPassword ]);
     }
+
+    public function updateUsername($userId, $newUsername) {
+        $sqlQuery = 'UPDATE userprofile SET Username = :newUsername WHERE UserProfile_ID = :userId';
+        $statement = $this->con->getPDO()->prepare($sqlQuery);
+        $statement->execute(['newUsername' => $newUsername, 'userId' => $userId]);
+    }
+    
+    public function updateUserPassword($userId, $newPassword) {
+        $sqlQuery = 'UPDATE userprofile SET UserPassword = :newPassword WHERE UserProfile_ID = :userId';
+        $statement = $this->con->getPDO()->prepare($sqlQuery);
+        $statement->execute(['newPassword' => $newPassword, 'userId' => $userId]);
+    }
 }
 
 ?>

@@ -20,6 +20,16 @@
       return $stmt->fetchAll(PDO::FETCH_CLASS, Review::class);
     }
 
+    public function insertReview($UserProfile_ID, $textContent, $rating) {
+      $sqlQuery = "INSERT INTO appreviews (UserProfile_ID, textContent, rating) VALUES (:UserProfile_ID, :textContent, :rating)";
+      $stmt = $this->con->getPDO()->prepare($sqlQuery);
+      $stmt->bindParam(':UserProfile_ID', $UserProfile_ID);
+      $stmt->bindParam(':textContent', $textContent);
+      $stmt->bindParam(':rating', $rating);
+      $stmt->execute();
+      return $this->con->getPDO()->lastInsertId();
+  }
+
 
   }
 

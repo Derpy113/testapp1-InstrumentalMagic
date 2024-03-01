@@ -5,6 +5,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+                h1, label {
+            color: white;
+        }</style>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -24,10 +29,13 @@
 
             <input type="submit" id="btn" value="Login" name="submit">
         </form>
-        <form name="otherForm" method="POST">
-        <input type="submit" name="createAccountButton" class="button" value="Create new account" /> <br>
-        <input type="submit" name="goBackButton" class="button" value="Go Back" />
-        </form>
+<form method="POST" action="php/controller/CreateAccount.php">
+    <input type="submit" value="Create new account" />
+</form>
+
+<form method="GET" action="index.php">
+    <input type="submit" value="Go Back" />
+</form>
     </div>
 </body>
 </html>
