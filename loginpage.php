@@ -30,7 +30,7 @@
 
             <input type="submit" id="btn" value="Login" name="submit">
         </form>
-<form method="POST" action="php/controller/CreateAccount.php">
+<form method="POST" action="createaccountpage.php">
     <input type="submit" value="Create new account" />
 </form>
 

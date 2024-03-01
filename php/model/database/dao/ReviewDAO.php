@@ -13,7 +13,9 @@
     public function getAllReviews()
     {
       $sqlQuery = 'SELECT appreviews.*, userprofile.Username, userprofile.ProfilePic 
-                          FROM appreviews JOIN userprofile on appreviews.UserProfile_ID = userprofile.UserProfile_ID';
+                    FROM appreviews 
+                    JOIN userprofile ON appreviews.UserProfile_ID = userprofile.UserProfile_ID 
+                    ORDER BY RAND() LIMIT 4';
       $stmt = $this->con->getPDO()->prepare($sqlQuery);
       $stmt->execute();
       

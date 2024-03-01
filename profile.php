@@ -1,25 +1,18 @@
 <?php
+session_start();
+
 include_once("autoload.php");
-$profileController = new ProfileController();
 $userDAO = new UserDAO(new Connection());
+$profileController = new ProfileController($userDAO);
 
-// if (!isset($_SESSION['user_id'])) {
-//     header("Location: loginpage.php");
-//     exit;
-// }
+if (!isset($_SESSION['user_id'])) {
+    header("Location: loginpage.php");
+    exit;
+}
 
-// $UserProfile_ID = $_SESSION['user_id'];
-
-// Kontrollera om formuläret har skickats
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $UserProfile_ID = 2; // hårdkodat -> kommer ersättas med sessionsvariabeln efter inlogg.
-    $textContent = $_POST['textContent'];
-    $rating = $_POST['rating'];
-
-    $profileController->addReview($UserProfile_ID, $textContent, $rating);
-
-    // ger input tack för recension
-    echo "<script>alert('Tack för din recension!');</script>";
+    $userId = $_SESSION['user_id'];
+    $profileController->handleRequest($userId, $_POST);
 }
 
 ?>
@@ -63,28 +56,53 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <main>
             <div class="container">
             <div class="forms">
-            <form method="post">
             <div class="field">
-                <label class="label"><h1>Rating (1-5)</h1></label>
-                <div class="control">
-                    <input class="input" type="number" name="rating" min="1" max="5" required>
-                </div>
-            </div>
-            <div class="field">
-                <label class="label"><h1>Recension</h1></label>
-                <div class="control">
-                    <textarea class="textarea" name="textContent" required></textarea>
-                </div>
-            </div>
-            <div class="control">
-                <button class="button is-link" type="submit">Lämna en recension om appen!</button>
-            </div>
-        </form>
+<!-- Ändra användaruppgifter formulär -->
+<form method="post">
+    <h2><br>Här kan du ändra ditt användarnamn, uppdatera ditt lösenord och lämna en recension om sidan!</h2>
+    <div class="field">
+        <label class="label"><h1>Nytt användarnamn:</h1></label>
+        <div class="control">
+            <input class="input" type="text" name="newUsername">
+        </div>
+    </div>
+    <div class="field">
+        <label class="label"><h1>Nytt lösenord:</h1></label>
+        <div class="control">
+            <input class="input" type="password" name="newPassword">
+        </div>
+    </div>
+    <div class="control">
+        <button class="button is-link" type="submit" name="action" value="changeUsername">Ändra användarnamn</button>
+        <button class="button is-link" type="submit" name="action" value="changePassword">Ändra lösenord</button>
+    </div>
+</form>
 
+<!-- Lämna en recension formulär -->
+<form method="post">
+    <div class="field" style="margin-top: 100px";>
+        <label class="label">Rating (1-5):</label>
+        <div class="control">
+            <input class="input" type="number" name="rating" min="1" max="5">
+        </div>
+    </div>
+    <div class="field">
+        <label class="label">Recension:</label>
+        <div class="control">
+            <textarea class="textarea" name="textContent"></textarea>
+        </div>
+    </div>
+    <div class="control">
+        <button class="button is-link" type="submit" name="action" value="leaveReview">Lämna en recension om appen!</button>
+    </div>
 
-            </div>
+    <form method="post">
+    <div class="control">
+        <button class="button is-danger" style="margin-top: 100px;" type="submit" name="action" value="logout">Logga ut</button>
+    </div>
+</form>
+</form>
 
-            </div>
         </main>
 
     </body>

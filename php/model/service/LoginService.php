@@ -4,8 +4,7 @@ class LoginService
 {
     private $username = "";
     private $password = "";
-
-    private $errorMessage = "";
+    private $user_id = null;
 
     public function __construct($username, $password)
     {
@@ -28,6 +27,7 @@ class LoginService
         $actualPassword = $user->UserPassword;
         if ($this->password == $actualPassword && $this->password != "")
         {   
+            $this->user_id = $user->UserProfile_ID;
             return true;
         }
         else
@@ -46,9 +46,9 @@ class LoginService
         return $this->password;
     }
 
-    public function getErrorMessage()
+    public function getUserProfileID()
     {
-        return $this->errorMessage;
+        return $this->user_id;
     }
 }
 
