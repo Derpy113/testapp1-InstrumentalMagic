@@ -30,7 +30,7 @@
      {
         http_response_code(500);
         header("Status: Username is required");
-        header("Location: " . "http://localhost/testapp1-InstrumentalMagic/loginpage.php" . "?error=User Name is required");
+        header("Location: " . "http://localhost/testapp1-InstrumentalMagic/loginpage.php");
      }
  }
 
