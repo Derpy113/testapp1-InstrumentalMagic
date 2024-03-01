@@ -9,22 +9,19 @@
 
  if(isset($_POST['submit']))
  {
-    echo "111";
     if(isset($_POST['submit'])) //this "if" is always be true. Can be removed if it 
     {                           //will only ever be used when the statement is true.
         $loginService = new LoginService($_POST['user'], $_POST['pass']);
     }
      if ($loginService->login() == true)
      {
-         $_SESSION['username'] = $loginService->GetUsername();
-         $_SESSION['password'] = $loginService->GetPassword();
-         //If this doesn't work, then someone forgot to change
-         //this variable on a different page.
+         //$_SESSION['username'] = $loginService->GetUsername();
+         //$_SESSION['password'] = $loginService->GetPassword();
+
+         $_SESSION['user_id'] = $loginService->getUserProfileID();
          $rootDir = dirname(dirname(getcwd()));
-         //echo "Location: " . "$rootDir\\index.php";
-         //header("Location: " . "$rootDir\\index.php");
-         //header("Location: " . $_SESSION['pageBeforeLogin']);
-         header("Location: " . "http://localhost/testapp1-InstrumentalMagic/index.php");
+
+         header("Location: " . "http://localhost/testapp1-InstrumentalMagic/profile.php");
      }
      else
      {
