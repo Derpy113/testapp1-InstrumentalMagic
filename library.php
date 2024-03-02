@@ -53,7 +53,7 @@
       <?php foreach ($songs as $song){?> 
          <form action='player.php' method='get'>
             <input type='hidden' name='Song_ID' value="<?php echo htmlspecialchars($song->getSongId())?>">
-            <button class="button" type="submit"> <?php echo htmlspecialchars($song->getTitle())?></button>
+            <button class="song button" type="submit"> <?php echo htmlspecialchars($song->getTitle())?></button>
           </form>
       <?php }?>
     </div>
