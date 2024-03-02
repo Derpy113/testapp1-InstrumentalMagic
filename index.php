@@ -57,8 +57,7 @@
                 <p>There are no reviews.</p>
             </div>
             <?php else: ?>
-                <?php foreach ($reviews as $review){ ?>
-                <?php foreach ($reviews as $review){ ?>
+                <?php foreach ($reviews as $review){ ?>                
                     <div class="box limited-box">
                         <article class="media"> <!-- Korrekt stavning av article här -->
                             <figure class="media-left">
@@ -80,7 +79,6 @@
                             </div>
                         </article>                              
                     </div> 
-                <?php } ?>
                 <?php } ?>
             <?php endif; ?> 
         </div>
