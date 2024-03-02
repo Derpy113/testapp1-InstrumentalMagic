@@ -1,7 +1,7 @@
 <?php
 
  include_once("autoload.php");
-
+ $_SESSION['pageBeforeLogin'] = 'loginpage.php';
 class CreateAccount
 {
     private $usernameInput = "";
@@ -12,16 +12,20 @@ class CreateAccount
 
     public function TryToCreateAccount()
     {
-        if(isset($_POST['submit'])) //maybe remove this if statement, it will currently always be true
+        $user_id = null; // Initialiserar som null.
+    
+        if(isset($_POST['submit']))
         {
             $this->validateInput();
             if ($this->usernameError == "" && $this->passwordError == "")
             {
                 $con = new Connection();
                 $userDAO = new UserDAO($con);
-                $userDAO->createUser($this->usernameInput, $this->passwordInput);
+                $user_id = $userDAO->createUser($this->usernameInput, $this->passwordInput);
             }
         }
+        
+        return $user_id; // Returnerar UserProfile_ID eller null.
     }
 
     private function validateInput()
