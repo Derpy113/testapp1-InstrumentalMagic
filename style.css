@@ -1,22 +1,22 @@
     /* Stilmall för startsidan
 
-    /* Bakgrundsfärg */
-    body {
-        background-color: black !important;
-    }
+/* Bakgrundsfärg */
+body {
+    background-color: black /*!important*/;
+}
 
-    /* Logotyp */
-    .logo {
-        width: auto;
-        max-height: 200px;
-    }
-     .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: black !important;
-    }
+/* Logotyp */
+.logo {
+    width: auto;
+    max-height: 200px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    background-color: black /*!important*/;
+}
 
     .text-title-h1{
         font-family: "Caveat", cursive;
@@ -54,61 +54,41 @@
         background-color: #a199c4;
     }
 
-    /* Huvudinnehåll */
-    main {
-        min-height: 100vh;
-        background-color: black !important;
-        color: #fff;
-        
-    }
-    /* ---------------------- Buttons! -------------------------------- */
-    .limited-box {
-        max-width: 280px;
-        margin: auto; 
-        overflow-y: auto;
-        word-wrap: break-word;
-        background-color: black;
-        color: white;
-        border: 1px solid white;
-        border-radius: 5px;
-    }
+/* Huvudinnehåll */
+main {
+    min-height: 100vh;
+    background-color: black !important;
+    color: #fff;
     
-    .media-content p strong {
-        color: white;
-    }
-    
-    .navbar-item.button-image {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-size: cover;
-        background-position: center;
-        width: 150px; /* Eller den bredd du föredrar */
-        height: 50px; /* Eller den höjd du föredrar */
-        color: white; /* Eller den textfärg du föredrar */
-        text-decoration: none;
-    }
-    
-    .navbar-item.button-image.player { background-image: url('../testapp1-InstrumentalMagic/img/ButtonPic/Spaceplayer2.jpg'); }
-    .navbar-item.button-image.library { background-image: url('../testapp1-InstrumentalMagic/img/ButtonPic/psykadeliskspelare3.jpg'); }
-    .navbar-item.button-image.profile { background-image: url('../testapp1-InstrumentalMagic/img/ButtonPic/rocker2.jpg'); }
-    
-    .navbar-item.button-image {
-        transition: transform 0.3s ease; /* Lägger till en mjuk övergångseffekt */
-    }
-    
-    .navbar-item.button-image:hover {
-        transform: scale(1.1); /* Gör knappen 10% större när muspekaren är över */
-    }
-    
-    /* --------------------------------- End of Buttons ------------------------------------------ */
+}
 
-    .control-buttons{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 8rem;
-    }
+
+/* --------------------- Review CARDS on INDEX ---------------------------------- */
+
+.limited-box {
+    max-width: 280px; /* Begränsa bredden */
+    margin: auto; /* Centrera boxen */
+    overflow-y: auto; /* Bryt långa ord */
+    word-wrap: break-word;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 4p;
+}
+
+.media-content p strong {
+    color: white;
+}
+
+/* ------------------------------- END av Review CARDS ------------------------------------------- */
+
+
+/* .control-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8rem;
+} */
 
     .content-container {
         display: flex;
@@ -131,18 +111,46 @@
         margin-top: 2rem;
     }
 
-    .songname {
-        margin-top: 3rem;
-    }
+.songname {
+    margin-top: 3rem;
+}
 
-    
-    @media (max-width: 500px) {
-        .content-container {
-            transform: rotate(-90deg);
-            transform-origin: center;
-            padding-top: 9rem;
-            background-color: black;
-        } */
+/*-------------------------------- START NAVBAR -----------------------------------------*/
+.navbar-item.button-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    width: 150px; /* Eller den bredd du föredrar */
+    height: 50px; /* Eller den höjd du föredrar */
+    color: white; /* Eller den textfärg du föredrar */
+    text-decoration: none;
+    transition: transform 0.3s ease; /* Lägger till en mjuk övergångseffekt */
+    margin-bottom: 40px;
+}
+
+.navbar-item.button-image.index { background-image: url('../testapp1-InstrumentalMagic/img/logo.PNG'); }
+.navbar-item.button-image.player { background-image: url('../testapp1-InstrumentalMagic/img/ButtonPic/Spaceplayer2.jpg'); }
+.navbar-item.button-image.library { background-image: url('../testapp1-InstrumentalMagic/img/ButtonPic/psykadeliskspelare3.jpg'); }
+.navbar-item.button-image.profile { background-image: url('../testapp1-InstrumentalMagic/img/ButtonPic/rocker2.jpg'); }
+  
+  
+.navbar-item.button-image:hover {
+    transform: scale(1.1); /* Gör knappen 10% större när muspekaren är över */  
+}
+
+/* ------------------------------- END NAVBAR--------------------------------------------- */
+
+
+
+@media (max-width: 500px) {
+    .content-container {
+        transform: rotate(-90deg);
+        transform-origin: center;
+        padding-top: 9rem;
+        background-color: black;
+    }
 
       .control-buttons button {
             transform: rotate(-90deg);
