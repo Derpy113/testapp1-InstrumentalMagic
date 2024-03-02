@@ -1,6 +1,6 @@
     <?php
         include_once("autoload.php");
-        require 'router.php';
+        //require 'router.php';
 
         $reviewController = new ReviewController();
         $reviews = $reviewController->showReviews();
@@ -23,16 +23,17 @@
     </head>
     <body>
         <!-- logga -->
-        <div class="container">
+        
+        <div>
             <h1 class="text-title-h1">InstrumentalMagic</h1>
         </div>
-        
-        <header class="container">
-            <div class="columns is-centered">
-                <div class="column is-6">
+
+        <header class="hero is-black">
+            <div class="hero-body">
+                <div class="container">
                     <img src="img/logo.PNG" alt="Min Logotyp" class="logo">
+                </div>
             </div>
-        </div>
         </header>
 
         <!-- menyN -->
@@ -48,19 +49,16 @@
         </nav>
 
         <!-- Innehåll på sidan -->
-    <main>
-
-        </div>
-        <div class="container">
+        <main>
+      <div class="container">
         <?php if (empty($reviews)): ?>
             <div class="notification is-warning">
                 <p>There are no reviews.</p>
             </div>
             <?php else: ?>
-                <div class="columns is-multiline">
-                <?php foreach ($reviews as $review): ?>
-                    <div class="column is-6 limited-box">
-                        <article class="media"> 
+                <?php foreach ($reviews as $review){ ?>
+                    <div class="box limited-box">
+                        <article class="media"> <!-- Korrekt stavning av article här -->
                             <figure class="media-left">
                                 <p class="image is-64x64">
                                     <?php if ($review->getProfilePic() !== null): ?>
@@ -80,8 +78,7 @@
                             </div>
                         </article>                              
                     </div> 
-                <?php endforeach; ?>
-                </div>
+                <?php } ?>
             <?php endif; ?> 
         </div>
     </main>
