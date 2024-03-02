@@ -1,4 +1,4 @@
-    /* Stilmall för startsidan
+    /* Stilmall för startsidan */
 
 /* Bakgrundsfärg */
 body {
@@ -63,7 +63,11 @@ main {
 }
 
 
-/* --------------------- Review CARDS on INDEX ---------------------------------- */
+/* --------------------- Styling for Review CARDS on INDEX ---------------------------------- */
+.star-rating {
+    color: gold;
+    font-size: 1.2em;
+}
 
 .limited-box {
     max-width: 280px; /* Begränsa bredden */
@@ -81,6 +85,7 @@ main {
 }
 
 /* ------------------------------- END av Review CARDS ------------------------------------------- */
+
 
 
 /* .control-buttons{
@@ -115,7 +120,7 @@ main {
     margin-top: 3rem;
 }
 
-/*-------------------------------- START NAVBAR -----------------------------------------*/
+/*-------------------------------- NAVBAR -----------------------------------------*/
 .navbar-item.button-image {
     display: flex;
     align-items: center;
@@ -127,7 +132,7 @@ main {
     color: white; /* Eller den textfärg du föredrar */
     text-decoration: none;
     transition: transform 0.3s ease; /* Lägger till en mjuk övergångseffekt */
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .navbar-item.button-image.index { background-image: url('../testapp1-InstrumentalMagic/img/logo.PNG'); }
@@ -140,9 +145,27 @@ main {
     transform: scale(1.1); /* Gör knappen 10% större när muspekaren är över */  
 }
 
-/* ------------------------------- END NAVBAR--------------------------------------------- */
+/* ------------------------------- END NAVBAR --------------------------------------------- */
 
+/* ------------------------------- START SONG BUTTONS ------------------------------------- */
+.song.button {
+    /* border: 1px solid white; */
+    color: white;
+    background-color: black;
+    margin-top: 20px;
+    border-radius: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
 
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
+}
+
+.song.button:hover {
+    /* Förstärk upphöjd effekt vid hover genom att förändra skuggan och lätt transformera */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(255, 255, 255, 0.25);
+}
+
+/* ------------------------------ END OF SONG BUTTONS --------------------------------------- */
 
 @media (max-width: 500px) {
     .content-container {
@@ -152,7 +175,7 @@ main {
         background-color: black;
     }
 
-      .control-buttons button {
-            transform: rotate(-90deg);
-        }
-    }
+    /* .control-buttons {
+        transform: rotate(-90deg);
+    } */
+}

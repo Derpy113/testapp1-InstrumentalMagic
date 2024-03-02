@@ -1,7 +1,5 @@
     <?php
         include_once("autoload.php");
-       // require 'router.php';
-        //require 'router.php';
 
         $reviewController = new ReviewController();
         $reviews = $reviewController->showReviews();
@@ -14,12 +12,11 @@
         <title>Instrumental Magic</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="home.css">
+        <!-- <link rel="stylesheet" href="home.css"> -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
         <style>
-            
         </style>    
     </head>
     <body>
@@ -50,7 +47,7 @@
         </nav>
 
         <!-- Innehåll på sidan -->
-        <main>
+    <main>
       <div class="container">
         <?php if (empty($reviews)): ?>
             <div class="notification is-warning">
