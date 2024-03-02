@@ -2,7 +2,7 @@
  
  //header("Location: " . "http://localhost/testapp1-InstrumentalMagic/index.php");
 
- session_start(); // Griefing (づ｡◕‿‿◕｡)づ
+ session_start();
 
  $rootDir = dirname(dirname(getcwd()));
  include_once ("$rootDir\\autoload.php");

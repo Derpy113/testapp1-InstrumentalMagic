@@ -59,46 +59,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="field">
 <!-- Ändra användaruppgifter formulär -->
 <form method="post">
-    <h2><br>Här kan du ändra ditt användarnamn, uppdatera ditt lösenord och lämna en recension om sidan!</h2>
+    <h2><br>Here you can change your username, update your password, and leave a review about the site! <br><br></h2>
     <div class="field">
-        <label class="label"><h1>Nytt användarnamn:</h1></label>
+        <label class="label"><h1>New username:</h1></label>
         <div class="control">
             <input class="input" type="text" name="newUsername">
         </div>
     </div>
     <div class="field">
-        <label class="label"><h1>Nytt lösenord:</h1></label>
+        <label class="label"><h1>New password:</h1></label>
         <div class="control">
             <input class="input" type="password" name="newPassword">
         </div>
     </div>
     <div class="control">
-        <button class="button is-link" type="submit" name="action" value="changeUsername">Ändra användarnamn</button>
-        <button class="button is-link" type="submit" name="action" value="changePassword">Ändra lösenord</button>
+        <button class="button is-link" type="submit" name="action" value="changeUsername">Change username</button>
+        <button class="button is-link" type="submit" name="action" value="changePassword">Change password</button>
     </div>
 </form>
 
 <!-- Lämna en recension formulär -->
 <form method="post">
     <div class="field" style="margin-top: 100px";>
-        <label class="label">Rating (1-5):</label>
+        <label class="label"><h1>Rating (1-5):</h1></label>
         <div class="control">
             <input class="input" type="number" name="rating" min="1" max="5">
         </div>
     </div>
     <div class="field">
-        <label class="label">Recension:</label>
+        <label class="label"><h1>Review the app:</h1></label>
         <div class="control">
             <textarea class="textarea" name="textContent"></textarea>
         </div>
     </div>
     <div class="control">
-        <button class="button is-link" type="submit" name="action" value="leaveReview">Lämna en recension om appen!</button>
+        <button class="button is-link" type="submit" name="action" value="leaveReview">Leave review!</button>
     </div>
 
     <form method="post">
     <div class="control">
-        <button class="button is-danger" style="margin-top: 100px;" type="submit" name="action" value="logout">Logga ut</button>
+        <button class="button is-danger" style="margin-top: 100px;" type="submit" name="action" value="logout">Log out</button>
     </div>
 </form>
 </form>

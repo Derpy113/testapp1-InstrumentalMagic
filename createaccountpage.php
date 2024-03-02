@@ -2,22 +2,17 @@
     session_start();
     include_once ("autoload.php");
     $ca = new CreateAccount(); //Istället för att ha ett controller objekt här så ska det ligga en Action i forms som pekar på den.
-    if(isset($_POST['submit']))
-    {
-        $ca->TryToCreateAccount();
-        if ($ca->GetPasswordError() == "" && $ca->GetUsernameError() == "")
-        {
-            $_SESSION['username'] = $ca->GetUsernameInput();
-            $_SESSION['password'] = $ca->GetPasswordInput();
-            //If this doesn't work, then someone forgot to change
-            //this variable on a different page.
-            header("Location: " . $_SESSION['pageBeforeLogin']);
-        }
+    $user_id = $ca->TryToCreateAccount();
+    if ($user_id) {
+        // Spara UserProfile_ID i session och omdirigera till profile.php
+        $_SESSION['user_id'] = $user_id;
+        header("Location: profile.php");
+        exit();
     }
 
     if(array_key_exists('loginButton', $_POST)) { //JOSEF TODO Controller är oftast den som använder Header, ha det som allmän regel
-        header("Location: loginpage.php");        //Lägg dessa två i Controller (I router?)
-    }
+        header("Location: profile.php");        //Lägg dessa två i Controller (I router?)
+     }
     if(array_key_exists('goBackButton', $_POST)) {
         header("Location: " . $_SESSION['pageBeforeLogin']);
     }
@@ -36,7 +31,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="form">

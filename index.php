@@ -23,16 +23,17 @@
     </head>
     <body>
         <!-- logga -->
-        <div class="container">
+        
+        <div>
             <h1 class="text-title-h1">InstrumentalMagic</h1>
         </div>
-        
-        <header class="container">
-            <div class="columns is-centered">
-                <div class="column is-6">
+
+        <header class="hero is-black">
+            <div class="hero-body">
+                <div class="container">
                     <img src="img/logo.PNG" alt="Min Logotyp" class="logo">
+                </div>
             </div>
-        </div>
         </header>
 
         <!-- menyN -->
