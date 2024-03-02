@@ -7,7 +7,7 @@
       private ?string $genre;
       private ?float $averageRating;
       private ?string $song;
-      private int $song_id;
+      private int $Song_ID;
       private ?int $timesPlayed;
       private ?string $title;
     
@@ -34,7 +34,7 @@
     
       public function getSongId(): int
       {
-        return $this->song_id;
+        return $this->Song_ID;
       }
     
       public function getTimesPlayed(): ?int

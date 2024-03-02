@@ -10,12 +10,12 @@
         width: auto;
         max-height: 200px;
     }
-    .container {
-        /* display: flex; */
-        /* flex-direction: column;
+     .container {
+        display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-color: black !important; */
+        background-color: black !important;
     }
 
     .text-title-h1{
@@ -56,15 +56,15 @@
 
     /* Huvudinnehåll */
     main {
-        /* min-height: 100vh;
+        min-height: 100vh;
         background-color: black !important;
-        color: #fff; */
+        color: #fff;
         
     }
     /* ---------------------- Buttons! -------------------------------- */
     .limited-box {
-        /* max-width: 280px; Begränsa bredden */
-        /* margin: auto; Centrera boxen */
+        max-width: 280px;
+        margin: auto; 
         overflow-y: auto;
         word-wrap: break-word;
         background-color: black;
@@ -103,26 +103,26 @@
     
     /* --------------------------------- End of Buttons ------------------------------------------ */
 
-    /* .control-buttons{
+    .control-buttons{
         display: flex;
         justify-content: center;
         align-items: center;
         margin-top: 8rem;
-    } */
+    }
 
     .content-container {
-        /* display: flex;
+        display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         text-align: center; 
-        max-width: 100%; */
+        max-width: 100%;
     }
 
     object {
         margin: auto; /* Centrerar elementet horisontellt */
         display: block; 
-        /* max-width: 100%; */
+        max-width: 100%;
     }
 
     .control-buttons {
@@ -135,7 +135,7 @@
         margin-top: 3rem;
     }
 
-    /* 
+    
     @media (max-width: 500px) {
         .content-container {
             transform: rotate(-90deg);
@@ -144,7 +144,7 @@
             background-color: black;
         } */
 
-    /*   .control-buttons button {
+      .control-buttons button {
             transform: rotate(-90deg);
-        } */
-    /* } */
+        }
+    }
