@@ -22,13 +22,13 @@
          $_SESSION['user_id'] = $loginService->getUserProfileID();
          $rootDir = dirname(dirname(getcwd()));
 
-         header("Location: " . "http://localhost/InstrumentalMagic/testapp1-InstrumentalMagic/profile.php");
+         header("Location: " . "http://localhost/testapp1-InstrumentalMagic/profile.php");
      }
      else
      {
         http_response_code(500);
         header("Status: Username is required");
-        header("Location: " . "http://localhost/InstrumentalMagic/testapp1-InstrumentalMagic/loginpage.php");
+        header("Location: " . "http://localhost/testapp1-InstrumentalMagic/loginpage.php");
      }
  }
 
