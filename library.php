@@ -39,10 +39,10 @@
   <nav class="navbar is-black" role="navigation" aria-label="main navigation">
     <div class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item" href="index.php">Home</a>
-        <a class="navbar-item" href="player.php">Player</a>
-        <a class="navbar-item" href="library.php">Library</a>
-        <a class="navbar-item" href="profile.php">Profile</a>
+        <a class="navbar-item button-image index mr-2" href="index.php">Home</a>
+        <a class="navbar-item button-image player mr-2" href="player.php">Player</a>
+        <a class="navbar-item button-image library mr-2" href="library.php">Library</a>
+        <a class="navbar-item button-image profile" href="profile.php">Profile</a>
       </div>
     </div>
   </nav>
@@ -53,7 +53,7 @@
       <?php foreach ($songs as $song){?> 
          <form action='player.php' method='get'>
             <input type='hidden' name='Song_ID' value="<?php echo htmlspecialchars($song->getSongId())?>">
-            <button type="submit"> <?php echo htmlspecialchars($song->getTitle())?></button>
+            <button class="button" type="submit"> <?php echo htmlspecialchars($song->getTitle())?></button>
           </form>
       <?php }?>
     </div>

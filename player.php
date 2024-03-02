@@ -12,7 +12,6 @@
       $currentSongNotes = $playerController->getSongNotesByID($songID);
   }
   
-
 ?>
 
 <!DOCTYPE html>
@@ -39,17 +38,22 @@
     </style>
 </head>
 <body>
-
+        <header class="hero is-black">
+            <div class="hero-body">
+                <div class="container">
+                    <img src="img/logo.PNG" alt="Min Logotyp" class="logo">
+                </div>
+            </div>
+        </header>
 
     <!-- Header/Menu -->
     <nav class="navbar is-black" role="navigation" aria-label="main navigation">
         <div class="navbar-menu">
             <div class="navbar-start">
-            <a class="navbar-item" href="index.php">
-            <img src="img/homebutton.png" alt="Home"></a>
-                <a class="navbar-item" href="player.php">Player</a>
-                <a class="navbar-item" href="library.php">Library</a>
-                <a class="navbar-item" href="profile.php">Profile</a>
+                <a class="navbar-item button-image index mr-2" href="index.php">Home</a>
+                <a class="navbar-item button-image player mr-2" href="player.php">Player</a>
+                <a class="navbar-item button-image library mr-2" href="library.php">Library</a>
+                 <a class="navbar-item button-image profile" href="profile.php">Profile</a>
             </div>
         </div>
     </nav>
