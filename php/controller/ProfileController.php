@@ -16,8 +16,15 @@ class ProfileController {
     }
 
     // Hantera begäran baserat på användarinput
-    public function handleRequest($userId, $postData) {
-        switch ($postData['action']) {
+    public function handleRequest($userId, $postData, $fileData = null) {
+        if (isset($postData['action'])) {
+            switch ($postData['action']) {
+                case 'changeProfilePic':
+                    if ($fileData && !empty($fileData['profilePicture']['tmp_name'])) {
+                        $this->changeProfilePic($userId, $fileData['profilePicture']);
+                    }
+                    break;
+
             case 'changeUsername':
                 $this->changeUsername($userId, $postData['newUsername']);
                 break;
@@ -29,10 +36,12 @@ class ProfileController {
             case 'leaveReview':
                 $this->addReview($userId, $postData['textContent'], $postData['rating']);
                 break;
+                
 
             case 'logout':
                     $this->logout();
                     break;
+            }
         }
     }
 
@@ -51,9 +60,29 @@ class ProfileController {
             echo "<script>alert('Ditt lösenord har uppdaterats.');</script>";
         }
     }
+
+    private function changeProfilePic($userId, $fileData){
+        if (!empty($fileData['tmp_name'])) {
+            $newPic = file_get_contents($fileData['tmp_name']);
+            $this->userDAO->updateProfilePic($userId, $newPic);
+        } 
+    }
+    
+    public function getUserProfileInfo($userId) {
+        $userInfo = $this->userDAO->getUserById($userId);
+        // Omvandla profilbilden till en base64-kodad sträng om den inte redan är det
+        if ($userInfo && $userInfo['ProfilePic']) {
+            $userInfo['ProfilePic'] = base64_encode($userInfo['ProfilePic']);
+        }
+        return $userInfo;
+    }
+
     private function logout() {
         session_destroy();
         header("Location: loginpage.php");
         exit;
     }
+
+
+
 }

@@ -5,6 +5,9 @@ include_once("autoload.php");
 $userDAO = new UserDAO(new Connection());
 $profileController = new ProfileController($userDAO);
 
+// $profileController = new ProfileController(new UserDAO(new Connection()));
+$userInfo = $profileController->getUserProfileInfo($_SESSION['user_id']);
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: loginpage.php");
     exit;
@@ -12,7 +15,7 @@ if (!isset($_SESSION['user_id'])) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $userId = $_SESSION['user_id'];
-    $profileController->handleRequest($userId, $_POST);
+    $profileController->handleRequest($userId, $_POST, $_FILES);
 }
 
 ?>
@@ -77,6 +80,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <button class="button is-link" type="submit" name="action" value="changePassword">Change password</button>
                     </div>
                 </form>
+                
+                <h2>Välkommen, <?php echo htmlspecialchars($userInfo['Username']); ?></h2>
+                    <div class="image is-128x128">
+                    <?php if ($userInfo['ProfilePic']): ?>
+                        <img src="data:image/jpeg;base64,<?php echo $userInfo['ProfilePic']; ?>" alt="Profilbild" />
+                    <?php endif; ?>
+                    </div>
+
+                    <form action="" method="post" enctype="multipart/form-data">
+                        <input type="file" name="profilePicture" required>
+                        <input type="hidden" name="action" value="changeProfilePic">
+                        <button class="button is-link" type="submit">Byt profilbild</button>
+                    </form>
+
 
                 <!-- Lämna en recension formulär -->
                 <form method="post">
