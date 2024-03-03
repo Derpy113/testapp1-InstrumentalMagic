@@ -5,7 +5,7 @@
  session_start();
 
  $rootDir = dirname(dirname(getcwd()));
- include_once ("$rootDir\\autoload.php");
+ include_once ("$rootDir/autoload.php");
 
  if(isset($_POST['submit']))
  {
