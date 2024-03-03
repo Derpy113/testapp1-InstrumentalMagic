@@ -5,13 +5,13 @@
  session_start();
 
  $rootDir = dirname(dirname(getcwd()));
- include_once ("$rootDir\\autoload.php");
+ include_once ("$rootDir/autoload.php");
 
  if(isset($_POST['submit']))
  {
     echo "111";
     if(isset($_POST['submit'])) //this "if" is always be true. Can be removed if it 
-    {                           //will only ever be used when the statement is true.
+    {                            //will only ever be used when the statement is true.
         $loginService = new LoginService($_POST['user'], $_POST['pass']);
     }
      if ($loginService->login() == true)
