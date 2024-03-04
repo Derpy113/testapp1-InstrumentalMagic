@@ -47,39 +47,39 @@
         </nav>
 
         <!-- Innehåll på sidan -->
-    <main>
-      <div class="container">
-        <?php if (empty($reviews)): ?>
-            <div class="notification is-warning">
-                <p>There are no reviews.</p>
+        <main>
+            <div class="container">
+                <?php if (empty($reviews)): ?>
+                    <div class="notification is-warning">
+                        <p>There are no reviews.</p>
+                    </div>
+                <?php else: ?>
+                    <?php foreach ($reviews as $review){ ?>                
+                        <div class="box limited-box">
+                            <article class="media"> <!-- Korrekt stavning av article här -->
+                                <figure class="media-left">
+                                    <p class="image is-64x64">
+                                        <?php if ($review->getProfilePic() !== null): ?>
+                                            <!-- Lägg till echo för att skriva ut base64-strängen -->
+                                            <img src="data:image/jpeg;base64,<?php echo $review->getProfilePic() ?>" alt="ProfilePic">
+                                        <?php endif; ?>
+                                    </p>
+                                </figure>
+                                <div class="media-content">
+                                    <p><strong><?= htmlspecialchars($review->getUsername()) ?>:</strong></p>
+                                        <div class="star-rating">
+                                            <?php for ($i = 1; $i <= $review->getRating(); $i++): ?>
+                                                <span>★</span>
+                                            <?php endfor; ?>
+                                        </div>
+                                    <p><?= htmlspecialchars($review->getTextContent()) ?></p>
+                                </div>
+                            </article>                              
+                        </div> 
+                    <?php } ?>
+                <?php endif; ?> 
             </div>
-            <?php else: ?>
-                <?php foreach ($reviews as $review){ ?>                
-                    <div class="box limited-box">
-                        <article class="media"> <!-- Korrekt stavning av article här -->
-                            <figure class="media-left">
-                                <p class="image is-64x64">
-                                    <?php if ($review->getProfilePic() !== null): ?>
-                                        <!-- Lägg till echo för att skriva ut base64-strängen -->
-                                        <img src="data:image/jpeg;base64,<?php echo $review->getProfilePic() ?>" alt="ProfilePic">
-                                    <?php endif; ?>
-                                </p>
-                            </figure>
-                            <div class="media-content">
-                                <p><strong><?= htmlspecialchars($review->getUsername()) ?>:</strong></p>
-                                    <div class="star-rating">
-                                        <?php for ($i = 1; $i <= $review->getRating(); $i++): ?>
-                                            <span>★</span>
-                                        <?php endfor; ?>
-                                    </div>
-                                <p><?= htmlspecialchars($review->getTextContent()) ?></p>
-                            </div>
-                        </article>                              
-                    </div> 
-                <?php } ?>
-            <?php endif; ?> 
-        </div>
-    </main>
+        </main>
 
     </body>
     </html>
