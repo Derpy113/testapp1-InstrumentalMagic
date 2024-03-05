@@ -9,6 +9,12 @@ class UserDAO
         $this->con = $con;
     }
 
+    private function getDefaultProfilePic()
+    {
+        $defaultImage = 'img/ProfilePic/anonymous.jpg';
+        return file_get_contents($defaultImage);
+    }
+
     public function getUserByUsername($username)
     {
         $sqlQuery = 'SELECT * FROM userprofile WHERE Username = :username';
@@ -37,12 +43,47 @@ class UserDAO
 
     public function createUser(string $username, string $userPassword)
     {
-        //Note that the validation of data is done in CreateAccount, as that is the role of that controller class.
-        //Also, at some point the functionality to add a profile picture might need to be added to this method.
-        $sqlQuery = 'INSERT INTO userprofile (Username, UserPassword) VALUES (:username, :userPassword)';
-        $statement = $this->con->getPDO()->prepare($sqlQuery); 
-        $statement->execute([ 'username' => $username, 'userPassword' => $userPassword ]);
+        $imageContent = $this->getDefaultProfilePic();
+
+        $sqlQuery = 'INSERT INTO userprofile (Username, UserPassword, ProfilePic) VALUES (:username, :userPassword, :profilePic)';
+        $statement = $this->con->getPDO()->prepare($sqlQuery);        
+        $statement->bindParam(':username', $username);
+        $statement->bindParam(':userPassword', $userPassword); // Antag att lösenordet redan är säkert hashat
+        $statement->bindParam(':profilePic', $imageContent, PDO::PARAM_LOB);
+        
+        $statement->execute();
+        
+        return $this->con->getPDO()->lastInsertId(); // Returnera ID för det nyligen skapade kontot
     }
+
+    public function updateUsername($userId, $newUsername) {
+        $sqlQuery = 'UPDATE userprofile SET Username = :newUsername WHERE UserProfile_ID = :userId';
+        $statement = $this->con->getPDO()->prepare($sqlQuery);
+        $statement->execute(['newUsername' => $newUsername, 'userId' => $userId]);
+    }
+    
+    public function updateUserPassword($userId, $newPassword) {
+        $sqlQuery = 'UPDATE userprofile SET UserPassword = :newPassword WHERE UserProfile_ID = :userId';
+        $statement = $this->con->getPDO()->prepare($sqlQuery);
+        $statement->execute(['newPassword' => $newPassword, 'userId' => $userId]);
+    }
+
+    public function updateProfilePic($userId, $newPic) {
+        $sql = "UPDATE userprofile SET ProfilePic = :newPic WHERE UserProfile_ID = :userId";
+        $stmt = $this->con->getPDO()->prepare($sql);
+        $stmt->bindParam(':newPic', $newPic, PDO::PARAM_LOB);
+        $stmt->bindParam(':userId', $userId, PDO::PARAM_INT);
+        $stmt->execute();
+    }
+
+    public function getUserById($userId)
+    {
+    $sqlQuery = 'SELECT Username, ProfilePic FROM userprofile WHERE UserProfile_ID = :userId';
+    $statement = $this->con->getPDO()->prepare($sqlQuery);
+    $statement->execute(['userId' => $userId]);
+    return $statement->fetch(PDO::FETCH_ASSOC);
+    }
+
 }
 
 ?>

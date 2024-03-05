@@ -1,8 +1,8 @@
-/* Stilmall för startsidan */
+    /* Stilmall för startsidan */
 
 /* Bakgrundsfärg */
 body {
-    background-color: black !important;
+    background-color: black /*!important*/;
 }
 
 /* Logotyp */
@@ -15,44 +15,44 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center; 
-    background-color: black !important;
+    background-color: black /*!important*/;
 }
 
-.text-title-h1{
-    font-family: "Caveat", cursive;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 30px;
-}
+    .text-title-h1{
+        font-family: "Caveat", cursive;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 30px;
+    }
 
-/* Meny - profile, library, player */
-.navbar-menu {
-    justify-content: center;
-    display: flex;
-    background-color: black !important;
-}
+    /* Meny - profile, library, player */
+    .navbar-menu {
+        justify-content: center;
+        display: flex;
+        background-color: black !important;
+    }
 
-.navbar-start {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    background-color: black !important;
-}
+    .navbar-start {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        background-color: black !important;
+    }
 
-/* Sidhuvud */
-.hero.is-black {
-    background-color: black !important;
-    display: flex;
-}
+    /* Sidhuvud */
+    .hero.is-black {
+        background-color: black !important;
+        display: flex;
+    }
 
-/* Menyknappar - player, library, proflie */
-.navbar-item {
-    font-size: 1.5rem;
-    width: auto;
-    border: 1px solid #333;
-    justify-content: center;
-    background-color: #a199c4;
-}
+    /* Menyknappar - player, library, proflie */
+    .navbar-item {
+        font-size: 1.5rem;
+        width: auto;
+        border: 1px solid #333;
+        justify-content: center;
+        background-color: #a199c4;
+    }
 
 /* Huvudinnehåll */
 main {
@@ -63,6 +63,30 @@ main {
 }
 
 
+/* --------------------- Styling for Review CARDS on INDEX ---------------------------------- */
+.star-rating {
+    color: gold;
+    font-size: 1.2em;
+}
+
+.limited-box {
+    max-width: 280px; /* Begränsa bredden */
+    margin: auto; /* Centrera boxen */
+    overflow-y: auto; /* Bryt långa ord */
+    word-wrap: break-word;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 4p;
+}
+
+.media-content p strong {
+    color: white;
+}
+
+/* ------------------------------- END av Review CARDS ------------------------------------------- */
+
+
 
 /* .control-buttons{
     display: flex;
@@ -71,30 +95,77 @@ main {
     margin-top: 8rem;
 } */
 
-.content-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center; 
-    max-width: 100%;
-}
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center; 
+        max-width: 100%;
+    }
 
-object {
-    margin: auto; /* Centrerar elementet horisontellt */
-    display: block; 
-    /* max-width: 100%; */
-}
+    object {
+        margin: auto; /* Centrerar elementet horisontellt */
+        display: block; 
+        max-width: 100%;
+    }
 
-.control-buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-}
+    .control-buttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+    }
 
 .songname {
     margin-top: 3rem;
 }
+
+/*-------------------------------- NAVBAR -----------------------------------------*/
+.navbar-item.button-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    width: 150px; /* Eller den bredd du föredrar */
+    height: 50px; /* Eller den höjd du föredrar */
+    color: white; /* Eller den textfärg du föredrar */
+    text-decoration: none;
+    transition: transform 0.3s ease; /* Lägger till en mjuk övergångseffekt */
+    margin-bottom: 20px;
+}
+
+.navbar-item.button-image.index { background-image: url('../testapp1-InstrumentalMagic/img/logo.PNG'); }
+.navbar-item.button-image.player { background-image: url('../testapp1-InstrumentalMagic/img/ButtonPic/Spaceplayer2.jpg'); }
+.navbar-item.button-image.library { background-image: url('../testapp1-InstrumentalMagic/img/ButtonPic/psykadeliskspelare3.jpg'); }
+.navbar-item.button-image.profile { background-image: url('../testapp1-InstrumentalMagic/img/ButtonPic/rocker2.jpg'); }
+  
+  
+.navbar-item.button-image:hover {
+    transform: scale(1.1); /* Gör knappen 10% större när muspekaren är över */  
+}
+
+/* ------------------------------- END NAVBAR --------------------------------------------- */
+
+/* ------------------------------- START SONG BUTTONS ------------------------------------- */
+.song.button {
+    /* border: 1px solid white; */
+    color: white;
+    background-color: black;
+    margin-top: 20px;
+    border-radius: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
+}
+
+.song.button:hover {
+    /* Förstärk upphöjd effekt vid hover genom att förändra skuggan och lätt transformera */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px rgba(255, 255, 255, 0.25);
+}
+
+/* ------------------------------ END OF SONG BUTTONS --------------------------------------- */
 
 @media (max-width: 500px) {
     .content-container {
@@ -104,7 +175,7 @@ object {
         background-color: black;
     }
 
- /*   .control-buttons button {
+    /* .control-buttons {
         transform: rotate(-90deg);
     } */
-} 
+}

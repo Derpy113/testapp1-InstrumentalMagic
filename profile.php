@@ -1,7 +1,24 @@
 <?php
-        session_start();
-        include_once("autoload.php");
-    ?>
+session_start();
+
+include_once("autoload.php");
+$userDAO = new UserDAO(new Connection());
+$profileController = new ProfileController($userDAO);
+
+// $profileController = new ProfileController(new UserDAO(new Connection()));
+$userInfo = $profileController->getUserProfileInfo($_SESSION['user_id']);
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: loginpage.php");
+    exit;
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $userId = $_SESSION['user_id'];
+    $profileController->handleRequest($userId, $_POST, $_FILES);
+}
+
+?>
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -11,7 +28,9 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
         <link rel="stylesheet" href="style.css">
         <style>
-
+        h1 {
+            color:white;
+        }
         </style>    
     </head>
     <body>
@@ -28,10 +47,10 @@
         <nav class="navbar is-black" role="navigation" aria-label="main navigation">
             <div class="navbar-menu">
                 <div class="navbar-start">
-                    <a class="navbar-item" href="index.php">Home</a>
-                    <a class="navbar-item" href="player.php">Player</a>
-                    <a class="navbar-item" href="library.php">Library</a>
-                    <a class="navbar-item" href="profile.php">Profile</a>
+                    <a class="navbar-item button-image index mr-2" href="index.php">Home</a>
+                    <a class="navbar-item button-image player mr-2" href="player.php">Player</a>
+                    <a class="navbar-item button-image library mr-2" href="library.php">Library</a>
+                    <a class="navbar-item button-image profile" href="profile.php">Profile</a>
                 </div>
             </div>
         </nav>
@@ -39,25 +58,67 @@
         <!-- Innehåll på sidan -->
         <main>
             <div class="container">
-                <p>Detta är din Profile hihi...</p>
-                <p>text på hemsida, gitarr e bra!</p>
-                <?php
-                $_SESSION['username'] = NULL;
-                //$_SESSION['username'] = "hallå";
-                if ($_SESSION['username'] == NULL || $_SESSION['password'] == NULL)
-                {
-                    echo "Du är inte inloggad";
-                }
-                else
-                {
-                    echo nl2br("Namn: " . $_SESSION['username'] . "\n" . "Lösenord (woops :3): " . $_SESSION['password']);
-                }
-                ?>
+                <div class="forms">
+                    <div class="field">
+                    <!-- Ändra användaruppgifter formulär -->
+                    <form method="post">
+                        <h2><br>Here you can change your username, update your password, and leave a review about the site! <br><br></h2>
+                    <div class="field">
+                        <label class="label"><h1>New username:</h1></label>
+                        <div class="control">
+                            <input class="input" type="text" name="newUsername">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label"><h1>New password:</h1></label>
+                        <div class="control">
+                            <input class="input" type="password" name="newPassword">
+                        </div>
+                    </div>
+                    <div class="control">
+                        <button class="button is-link" type="submit" name="action" value="changeUsername">Change username</button>
+                        <button class="button is-link" type="submit" name="action" value="changePassword">Change password</button>
+                    </div>
+                </form>
+                
+                <h2>Välkommen, <?php echo htmlspecialchars($userInfo['Username']); ?></h2>
+                    <div class="image is-128x128">
+                    <?php if ($userInfo['ProfilePic']): ?>
+                        <img src="data:image/jpeg;base64,<?php echo $userInfo['ProfilePic']; ?>" alt="Profilbild" />
+                    <?php endif; ?>
+                    </div>
+
+                    <form action="" method="post" enctype="multipart/form-data">
+                        <input type="file" name="profilePicture" required>
+                        <input type="hidden" name="action" value="changeProfilePic">
+                        <button class="button is-link" type="submit">Byt profilbild</button>
+                    </form>
 
 
+                <!-- Lämna en recension formulär -->
+                <form method="post">
+                    <div class="field" style="margin-top: 100px";>
+                        <label class="label"><h1>Rating (1-5):</h1></label>
+                        <div class="control">
+                            <input class="input" type="number" name="rating" min="1" max="5">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label"><h1>Review the app:</h1></label>
+                        <div class="control">
+                            <textarea class="textarea" name="textContent"></textarea>
+                        </div>
+                    </div>
+                    <div class="control">
+                        <button class="button is-link" type="submit" name="action" value="leaveReview">Leave review!</button>
+                    </div>
 
-
-            </div>
+                <form method="post">
+                    <div class="control">
+                        <button class="button is-danger" style="margin-top: 100px;" type="submit" name="action" value="logout">Log out</button>
+                    </div>
+                </form>
+            </form>
         </main>
 
     </body>
